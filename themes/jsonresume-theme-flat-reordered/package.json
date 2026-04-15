@@ -1,0 +1,7 @@
+{
+  "name": "jsonresume-theme-flat-reordered",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "license": "MIT"
+}

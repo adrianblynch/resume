@@ -1,0 +1,292 @@
+{
+    "meta": {
+        "themeOptions": {
+            "sectionOrder": [],
+            "sectionTitles": {
+                "contact": "Contact",
+                "about": "About me",
+                "profiles": "Profiles",
+                "work": "Work history",
+                "volunteer": "Volunteer",
+                "education": "Education",
+                "awards": "Awards",
+                "publications": "Publications",
+                "skills": "Skills",
+                "languages": "Languages",
+                "interests": "Interests",
+                "references": "References"
+            }
+        }
+    },
+    "basics": {
+        "pronouns": "Yee/Yee",
+        "name": "Adrian Lynch",
+        "label": "CTO & Lead/Senior Developer",
+        "picture": "",
+        "email": "adelynch+cv@gmail.com",
+        "phone": "07855 818 413",
+        "summary": "An experienced, enthusiastic, full-stack web applications developer with a broad skill set. Specialising in JavaScript, both in Node and the browser, CFML and SQL. I'm passionate about learning and improving my craft. I enjoy mentoring and teaching others. I'm pragmatic in my approach to development with a drive to solve problems with technical solutions.",
+        "location": {
+            "address": "",
+            "postalCode": "",
+            "city": "London and the South East",
+            "countryCode": "UK",
+            "region": ""
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "url": "https://github.com/adrianblynch"
+            },
+            {
+                "network": "Stackoverflow",
+                "url": "http://stackoverflow.com/users/121946/adrian-lynch"
+            },
+            {
+                "network": "LinkedIn",
+                "url": "https://www.linkedin.com/in/adrian-lynch-8237a21"
+            },
+            {
+                "network": "Codewars",
+                "url": "https://www.codewars.com/users/adrianblynch"
+            }
+        ]
+    },
+    "work": [
+        {
+            "company": "Eurostar",
+            "position": "Lead/Senior JavaScript Developer",
+            "website": "https://www.eurostar.com/",
+            "startDate": "2016-05-17",
+            "endDate": "2018-07-27",
+            "summary": "Eurostar began a project to update their .com website to a number of responsive single page applications and supporting APIs. I joined as a Senior Developer and moved to Lead Developer across additional projects in the upgrade. I finished at Eurostar as Lead Developer on a projected 18 month long multi-part project to replace a '70s era mainframe inventory system and to replace multiple booking tools used internally and externally with a new front-end application.",
+            "highlights": [
+                "Wrote multiple responsive front-end applications using React with Styled Components, SCSS, Redux and Apollo Client.",
+                "Created REST and GraphQL APIs to support the front-ends using a mixture of Express, Koa and Hapi.",
+                "Set-up front-end CI pipelines using CircleCI & Heroku and worked with CodeDeploy on AWS for API deployments.",
+                "Increased the speed and rate of deployments by introducing GitHub Flow to keep the pipeline clear and Prettier to remove PR noise around formatting.",
+                "Wrote front-end and API unit, integration and end-to-end tests across different projects using a mixture of Mocha/Chai, Jest, Enzyme, Cucumber.js, WebdriverIO, Nightwatch.js, CodeceptJS and Cypress.",
+                "Improved cross-team communications by encouraging meetings between various stakeholders in the form of Scrum-of-Scrums, ad-hoc and regular meetings and catch-ups.",
+                "Interviewed and onboarded developers of various levels both locally and remote for existing teams and newly formed ones.",
+                "Increased domain and technical knowledge by mentoring developers in and across teams and by regularly presenting project progress and new ideas, frameworks or libraries.",
+                "Improved and promoted security best practices by working with penetration testers for front-end and backend test runs, fostering awareness in teams and working with the Lead Architect to homogenise security practices across teams.",
+                "Promoted code reuse with shared components, component libraries and utility code.",
+                "Took part in the technical analysis of a new inventory system from a 3rd party supplier and developed a GraphQL API as an abstraction over the new inventory system's API."
+            ]
+        },
+        {
+            "company": "Tido Music",
+            "position": "Senior JavaScript Developer (Contract)",
+            "website": "https://tido-music.com",
+            "startDate": "2016-04-04",
+            "endDate": "2016-05-11",
+            "summary": "A mobile application to help teach piano with courses supplied by famous pianists and music tutition companies.",
+            "highlights": [
+                "Provided a technical review of the existing architecture for the API.",
+                "Designed and built a Node based RESTful API using Hapi.",
+                "Migrated data persistence from MySQL to DynamoDB.",
+                "Expanded the admin site using React and Redux with Material UI."
+            ]
+        },
+        {
+            "company": "Concrete Media",
+            "position": "Senior Engineer/Team Lead",
+            "website": "https://concreteplatform.com",
+            "startDate": "2012-09-10",
+            "endDate": "2016-03-31",
+            "summary": "A digital asset management platform for retailers, with workflow, planning, communications and job management to aid collaboration in an enterprise environment.",
+            "highlights": [
+                "Designed and built a Node REST API and Backbone/Marionette front-end to replace a legacy platform.",
+                "Helped transition a Backbone/Marionette MVC front-end application toward a Backbone/Rivets MVVM architecture.",
+                "Designed a Roles API backed by a graph database for authorisation of resources to requesting users.",
+                "Designed and built a site configuration application to automate client site generation. Ensuring consistency and saving both the engineering and infrastructure teams hours on each new client set-up.",
+                "Built an API on top of the configuration application to expose data to internal services.",
+                "Lead teams on multiple application rewrites using Backbone/Marionette.",
+                "Consolidated multiple access rights across different clients as part of an access right audit.",
+                "Introduced testing (TDD, integration, end-to-end) into the development team's workflow.",
+                "Analysed penetration test results, created demos to showcase the vulnerabilities and documented possible mitigations.",
+                "Transitioned into a team lead role to mentor and coach other developers.",
+                "Took part in the hiring of new engineers at junior, senior and technical architect level.",
+                "Ensured the smooth start-up of new hires with guides, documentation and application and code walk-throughs.",
+                "Started Code Club sessions to promote discussion and demos of interest.",
+                "Line managed developers, doing one-to-ones, goal setting and performance reviews."
+            ]
+        },
+        {
+            "company": "Halestorm",
+            "position": "Owner/Developer",
+            "startDate": "2008-01-01",
+            "endDate": "2012-09-01",
+            "summary": "A web development company offering hosting and application services.",
+            "highlights": [
+                "Provided full-stack web development, SEO and web design services for clients.",
+                "Provided managed hosting for clients on a Windows, Apache, Tomcat, Railo and SQL Server stack.",
+                "Developed a hosted content management system to speed up website creation.",
+                "Liaised with clients through all parts of the development cycle, from initial requirements gathering through to development and support.",
+                "Orchestrated design work with external suppliers.",
+                "Managed client accounts, contracts and pricing agreements.",
+                "Sourced new clients through networking, social media and existing contacts."
+            ]
+        },
+        {
+            "company": "Property Owl",
+            "position": "Lead Developer",
+            "startDate": "2007-07-24",
+            "startDateNote": "Best email I could find is dated 24 July 2007 talking about starting the role",
+            "endDate": "2008-07-01",
+            "endDateNote": "No evidence of an end date but I remember it being around a year",
+            "summary": "A start-up competing with the major property portals (Rightmove, PrimeLocation) and estate agent software providers (Expert Agent, Vebra).",
+            "highlights": [
+                "Led the portal's design and build.",
+                "Integrated the portal with external property sites such as Rightmove and PrimeLocation.",
+                "Built the server infrastructure.",
+                "Created a site templating application for rapid client site generation."
+            ]
+        },
+        {
+            "company": "Freelance",
+            "position": "Web Application Developer",
+            "website": "",
+            "startDate": "2004-01-01",
+            "endDate": "2007-01-01",
+            "summary": "As a freelance developer I completed work for organisations including Merrill Lynch, Deloitte, Boeing, Coke, Barclaycard, DfES, the National Lottery, Shell, PricewaterhouseCoopers, Diageo, building websites and applications.",
+            "highlights": [
+                "O2 Events - Designed and built a system for the O2 Events team to organise their UK and European promotional tours.",
+                "Implemented SiteCore CMS for three government agencies, The Training and Development Agency for Schools, The Information Commissioner's Office and the Institute of Educational Assessors.",
+                "Designed and built an advertising awards show media upload service which took video, audio and image files as part of the entry process and allowed modifications and conversions for judging across different devices. (Still in active use today)"
+            ]
+        },
+        {
+            "company": "Thoughtbubble",
+            "position": "Junior/Mid-Level Developer",
+            "website": "https://thoughtbubble.com",
+            "startDate": "2001-01-01",
+            "endDate": "2004-01-01",
+            "summary": "A London based web development agency.",
+            "highlights": [
+                "Progressed from junior to mid-level developer.",
+                "Liaised with stakeholders for requirements gathering. ",
+                "Introduced better development techniques such as modularisation, encapsulation, DRY principals and code generation."
+            ]
+        }
+    ],
+    "volunteer": [],
+    "education": [
+        {
+            "institution": "Open University",
+            "area": "Software Development",
+            "startDate": "2003-01-01",
+            "endDate": "2003-01-01",
+            "gpa": "",
+            "courses": [
+                "M206 - Computing: An Object Oriented Approach (Distinction pass)"
+            ]
+        },
+        {
+            "institution": "Self learning",
+            "area": "Certifications",
+            "courses": [
+                "M101P: MongoDB for Developers (Pass mark of 100%)",
+                "Certified Advanced ColdFusion Developer 6/7/8/9 (Pass marks of 94%, 98%, 98%, 83%)",
+                "Brainbench certificates in HTML 3.2, XML Concepts, RDBMS Concepts, JavaScript, JavaScript 1.5 Fundamentals, ColdFusion 5 and ColdFusion 8"
+            ]
+        },
+        {
+            "institution": "St. Thomas More RC School",
+            "area": "Secondary School",
+            "startDate": "1989-01-01",
+            "endDate": "1998-01-01",
+            "gpa": "",
+            "courses": [
+                "A-Level Maths, Physics and Economics",
+                "GCSE Maths, Double Science, English Language/Literature, Geography, Art, RE and Business Studies"
+            ]
+        }
+    ],
+    "awards": [],
+    "publications": [],
+    "skills": [
+        {
+            "name": "Front-End",
+            "level": "",
+            "keywords": [
+                "JavaScript",
+                "React, Riot",
+                "Redux, Apollo Client",
+                "Backbone, Marionette",
+                "HTML",
+                "CSS, SCSS, BEM, Susy",
+                "jQuery"
+            ]
+        },
+        {
+            "name": "Backend",
+            "level": "",
+            "keywords": [
+                "Node",
+                "Express, Koa, Hapi",
+                "REST, GraphQL",
+                "MySQL, MSSQL",
+                "MongoDB, DynamoDB, Redis",
+                "OrientDB",
+                "ColdFusion, Railo"
+            ]
+        },
+        {
+            "name": "SDL & CI",
+            "level": "",
+            "keywords": [
+                "CircleCI",
+                "Heroku, AWS",
+                "Git, SVN",
+                "GitHub, GitLab",
+                "Agile, Scrum, Kanban",
+                "Webpack, Grunt",
+                "Jenkins"
+            ]
+        },
+        {
+            "name": "Testing",
+            "level": "",
+            "keywords": [
+                "Mocha, Chai, Sinon",
+                "Jest, Enzyme",
+                "Cypress, Nightwatch.js, CodeceptJS, WebdriverIO",
+                "Cucumber.js",
+                "AVA"
+            ]
+        }
+    ],
+    "interests": [
+        {
+            "name": "Sport",
+            "keywords": [
+                "Badminton",
+                "Skateboarding",
+                "Tennis",
+                "Running"
+            ]
+        },
+        {
+            "name": "Gaming",
+            "keywords": [
+                "Retro games",
+                "PhaserJS"
+            ]
+        }
+    ],
+    "references": [
+        {
+            "name": "Xavier Romanet - Head of IS Sales Systems at Eurostar",
+            "reference": "Adrian has helped us immensely not only with his technical skills but also with his leadership skills. Adrian was heading the transformation of the team to achieve great business and digital agility and great productivity in the end. I would recommend hiring Adrian for anyone who wants to have working software solutions but also a leader who can help to transform their organisation."
+        },
+        {
+            "name": "Andrew Clarke - Technical Architect at Concrete Media Ltd",
+            "reference": "Adrian is a conscientious, talented software engineer who delivers quality software whilst always wanting to do better. Adrian mentors colleagues by pushing them to read, learn and try new technologies, whilst keeping a pragmatic view on the usefulness of these technologies to solve the real world problem. I'd welcome the chance to work with Adrian again, and recommend him to anyone who needs to get stuff done, instead of just talking about it."
+        },
+        {
+            "name": "James Maltby -  CEO at Thoughtbubble Ltd",
+            "reference": "I first hired Adrian as an office junior and then watched him learn and develop his skills into one of the best and brightest developers I've seen in twenty years. He has been a great asset to us both as a full time employee and again, later, as an occasional freelancer. I would highly recommend him across the board for his skills, professionalism and great personality."
+        }
+    ]
+}
