@@ -5,7 +5,7 @@ This project generates a static HTML resume page from [JSON Resume](https://json
 It uses:
 
 - `resumed` for validation and rendering
-- `jsonresume-theme-even` as the HTML theme
+- `jsonresume-theme-flat-reordered` as the HTML theme
 
 ## Requirements
 
@@ -32,7 +32,7 @@ Generate the HTML page:
 npm run build
 ```
 
-`npm run render` is an alias for the same command.
+`npm run render` is an alias for the same command, and it uses the active `THEME` from [`.env`](./.env).
 
 Run the local preview server with automatic rebuilds:
 
@@ -62,7 +62,7 @@ resume.html
 You can also run the underlying CLI directly:
 
 ```bash
-npx resumed render resume.json --theme jsonresume-theme-even --output resume.html
+npx resumed render resume.json --theme jsonresume-theme-flat-reordered --output resume.html
 ```
 
 ## Typical Workflow

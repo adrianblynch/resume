@@ -1,7 +1,24 @@
 {
     "meta": {
         "themeOptions": {
-            "sectionOrder": [],
+            "sectionOrder": [
+                "about",
+                "skills",
+                "work"
+            ],
+            "dateFormat": {
+                "locale": "en-GB",
+                "options": {
+                    "month": "short",
+                    "year": "numeric"
+                }
+            },
+            "dateRangeSeparator": " to ",
+            "hiddenSections": [
+                "contact",
+                "interests",
+                "profiles"
+            ],
             "sectionTitles": {
                 "contact": "Contact",
                 "about": "About me",
@@ -115,7 +132,7 @@
         {
             "company": "Halestorm",
             "position": "Owner/Developer",
-            "startDate": "2008-01-01",
+            "startDate": "2008-07-01",
             "endDate": "2012-09-01",
             "summary": "A web development company offering hosting and application services.",
             "highlights": [
@@ -147,8 +164,8 @@
             "company": "Freelance",
             "position": "Web Application Developer",
             "website": "",
-            "startDate": "2004-01-01",
-            "endDate": "2007-01-01",
+            "startDate": "2004",
+            "endDate": "2007",
             "summary": "As a freelance developer I completed work for organisations including Merrill Lynch, Deloitte, Boeing, Coke, Barclaycard, DfES, the National Lottery, Shell, PricewaterhouseCoopers, Diageo, building websites and applications.",
             "highlights": [
                 "O2 Events - Designed and built a system for the O2 Events team to organise their UK and European promotional tours.",
@@ -160,8 +177,8 @@
             "company": "Thoughtbubble",
             "position": "Junior/Mid-Level Developer",
             "website": "https://thoughtbubble.com",
-            "startDate": "2001-01-01",
-            "endDate": "2004-01-01",
+            "startDate": "2001",
+            "endDate": "2004",
             "summary": "A London based web development agency.",
             "highlights": [
                 "Progressed from junior to mid-level developer.",
@@ -175,8 +192,8 @@
         {
             "institution": "Open University",
             "area": "Software Development",
-            "startDate": "2003-01-01",
-            "endDate": "2003-01-01",
+            "startDate": "2003",
+            "endDate": "2003",
             "gpa": "",
             "courses": [
                 "M206 - Computing: An Object Oriented Approach (Distinction pass)"
@@ -194,8 +211,8 @@
         {
             "institution": "St. Thomas More RC School",
             "area": "Secondary School",
-            "startDate": "1989-01-01",
-            "endDate": "1998-01-01",
+            "startDate": "1989",
+            "endDate": "1998",
             "gpa": "",
             "courses": [
                 "A-Level Maths, Physics and Economics",

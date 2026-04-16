@@ -30,18 +30,23 @@ h4 {
 section {
   margin-top: 30px;
 }
+ul {
+  margin: 0;
+  padding-left: 0;
+}
 li {
   line-height: 1.8;
   list-style: none;
+  padding-left: 18px;
+  position: relative;
 }
 li:before {
   content: "\f052";
-  float: left;
   font: 13px Octicons;
-  margin-top: 6px;
-  margin-left: -20px;
+  left: 0;
   opacity: 0.1;
   position: absolute;
+  top: 6px;
 }
 blockquote {
   border-left: 5px solid #e7e9ec;

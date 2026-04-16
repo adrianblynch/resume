@@ -4,7 +4,7 @@
   "private": true,
   "description": "Personal CV/resume site generated from JSON Resume data.",
   "scripts": {
-    "build": "resumed render resume.json --theme jsonresume-theme-even --output resume.html",
+    "build": "node scripts/build-html.js",
     "dev": "node --watch --watch-path=dev.js --watch-path=resume.json --watch-path=.env dev.js",
     "render": "npm run build",
     "validate": "resumed validate resume.json"
@@ -13,14 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@jsonresume/jsonresume-theme-class": "^0.2.5",
     "dotenv": "^17.4.2",
-    "jsonresume-theme-elegant": "^1.3.10",
-    "jsonresume-theme-eloquent": "^5.0.0",
-    "jsonresume-theme-even": "^0.26.1",
-    "jsonresume-theme-flat": "^0.3.7",
     "jsonresume-theme-flat-reordered": "file:./themes/jsonresume-theme-flat-reordered",
-    "jsonresume-theme-microdata": "^0.2.0",
     "resumed": "^3.0.1"
   }
 }

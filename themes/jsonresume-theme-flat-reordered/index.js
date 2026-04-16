@@ -131,7 +131,7 @@ const sectionTemplates = {
   work: Handlebars.compile(sectionListTemplate('work', 'Work', `
       <h4 class="strike-through">
         <span>{{company}}</span>
-        <span class="date">{{startDate}} -- {{endDate}}</span>
+        <span class="date">{{displayDateRange}}</span>
       </h4>
       {{#if website}}
       <div class="website pull-right">
@@ -158,7 +158,7 @@ const sectionTemplates = {
   volunteer: Handlebars.compile(sectionListTemplate('volunteer', 'Volunteer', `
       <h4 class="strike-through">
         <span>{{organization}}</span>
-        <span class="date">{{startDate}} -- {{endDate}}</span>
+        <span class="date">{{displayDateRange}}</span>
       </h4>
       {{#if website}}
       <div class="website pull-right">
@@ -185,7 +185,7 @@ const sectionTemplates = {
   education: Handlebars.compile(sectionListTemplate('education', 'Education', `
       <h4 class="strike-through">
         <span>{{institution}}</span>
-        <span class="date">{{startDate}} -- {{endDate}}</span>
+        <span class="date">{{displayDateRange}}</span>
       </h4>
       {{#if area}}
       <div class="area">{{area}}</div>
@@ -367,12 +367,17 @@ function buildSections(resume) {
   const availableSections = new Map();
   const basics = resume.basics || {};
   const themeOptions = (resume.meta && resume.meta.themeOptions) || {};
+  const dateFormat = themeOptions.dateFormat || {};
+  const dateRangeSeparator = normalizeDateRangeSeparator(themeOptions.dateRangeSeparator);
   const requestedOrder = Array.isArray(themeOptions.sectionOrder)
     ? themeOptions.sectionOrder
     : [];
+  const hiddenSections = new Set(
+    Array.isArray(themeOptions.hiddenSections) ? themeOptions.hiddenSections : []
+  );
   const sectionTitles = themeOptions.sectionTitles || {};
 
-  if (basics.email || basics.phone || basics.website) {
+  if (!hiddenSections.has('contact') && (basics.email || basics.phone || basics.website)) {
     availableSections.set(
       'contact',
       sectionTemplates.contact({
@@ -382,7 +387,7 @@ function buildSections(resume) {
     );
   }
 
-  if (basics.summary) {
+  if (!hiddenSections.has('about') && basics.summary) {
     availableSections.set(
       'about',
       sectionTemplates.about({
@@ -392,7 +397,7 @@ function buildSections(resume) {
     );
   }
 
-  if (hasItems(basics.profiles)) {
+  if (!hiddenSections.has('profiles') && hasItems(basics.profiles)) {
     availableSections.set(
       'profiles',
       sectionTemplates.profiles({
@@ -402,15 +407,45 @@ function buildSections(resume) {
     );
   }
 
-  addArraySection(availableSections, 'work', resume.work, sectionTitles);
-  addArraySection(availableSections, 'volunteer', resume.volunteer, sectionTitles);
-  addArraySection(availableSections, 'education', resume.education, sectionTitles);
-  addArraySection(availableSections, 'awards', resume.awards, sectionTitles);
-  addArraySection(availableSections, 'publications', resume.publications, sectionTitles);
-  addArraySection(availableSections, 'skills', resume.skills, sectionTitles);
-  addArraySection(availableSections, 'languages', resume.languages, sectionTitles);
-  addArraySection(availableSections, 'interests', resume.interests, sectionTitles);
-  addArraySection(availableSections, 'references', resume.references, sectionTitles);
+  addArraySection(
+    availableSections,
+    'work',
+    formatItemDates(resume.work, ['startDate', 'endDate'], dateFormat, dateRangeSeparator),
+    sectionTitles,
+    hiddenSections
+  );
+  addArraySection(
+    availableSections,
+    'volunteer',
+    formatItemDates(resume.volunteer, ['startDate', 'endDate'], dateFormat, dateRangeSeparator),
+    sectionTitles,
+    hiddenSections
+  );
+  addArraySection(
+    availableSections,
+    'education',
+    formatItemDates(resume.education, ['startDate', 'endDate'], dateFormat, dateRangeSeparator),
+    sectionTitles,
+    hiddenSections
+  );
+  addArraySection(
+    availableSections,
+    'awards',
+    formatItemDates(resume.awards, ['date'], dateFormat),
+    sectionTitles,
+    hiddenSections
+  );
+  addArraySection(
+    availableSections,
+    'publications',
+    formatItemDates(resume.publications, ['releaseDate'], dateFormat),
+    sectionTitles,
+    hiddenSections
+  );
+  addArraySection(availableSections, 'skills', resume.skills, sectionTitles, hiddenSections);
+  addArraySection(availableSections, 'languages', resume.languages, sectionTitles, hiddenSections);
+  addArraySection(availableSections, 'interests', resume.interests, sectionTitles, hiddenSections);
+  addArraySection(availableSections, 'references', resume.references, sectionTitles, hiddenSections);
 
   const orderedKeys = [];
 
@@ -429,8 +464,8 @@ function buildSections(resume) {
   return orderedKeys.map((section) => availableSections.get(section));
 }
 
-function addArraySection(sections, key, items, sectionTitles) {
-  if (!hasItems(items)) {
+function addArraySection(sections, key, items, sectionTitles, hiddenSections) {
+  if (hiddenSections.has(key) || !hasItems(items)) {
     return;
   }
 
@@ -465,6 +500,110 @@ function defaultTitleFor(key) {
     interests: 'Interests',
     references: 'References'
   }[key];
+}
+
+function formatItemDates(items, fields, dateFormat, dateRangeSeparator) {
+  if (!Array.isArray(items)) {
+    return items;
+  }
+
+  return items.map((item) => {
+    const nextItem = { ...item };
+
+    for (const field of fields) {
+      if (typeof nextItem[field] === 'string') {
+        nextItem[field] = formatDateValue(nextItem[field], dateFormat);
+      }
+    }
+
+    if (fields.includes('startDate') || fields.includes('endDate')) {
+      nextItem.displayDateRange = formatDateRange(
+        nextItem.startDate,
+        nextItem.endDate,
+        dateRangeSeparator
+      );
+    }
+
+    return nextItem;
+  });
+}
+
+function formatDateValue(value, dateFormat) {
+  const match = /^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/.exec(value);
+
+  if (!match) {
+    return value;
+  }
+
+  const locale = typeof dateFormat.locale === 'string' && dateFormat.locale.trim()
+    ? dateFormat.locale
+    : 'en-GB';
+  const options = normalizeDateFormatOptions(dateFormat.options);
+
+  if (!options) {
+    return value;
+  }
+
+  const year = Number.parseInt(match[1], 10);
+  const month = match[2] ? Number.parseInt(match[2], 10) : null;
+  const day = match[3] ? Number.parseInt(match[3], 10) : 1;
+
+  if (!month && usesMonthOrDay(options)) {
+    return String(year);
+  }
+
+  const date = new Date(Date.UTC(year, (month || 1) - 1, day));
+
+  return new Intl.DateTimeFormat(locale, {
+    ...options,
+    timeZone: 'UTC'
+  }).format(date);
+}
+
+function normalizeDateFormatOptions(options) {
+  if (!options || typeof options !== 'object' || Array.isArray(options)) {
+    return null;
+  }
+
+  const normalized = {};
+
+  if (isAllowedValue(options.year, ['numeric', '2-digit'])) {
+    normalized.year = options.year;
+  }
+
+  if (isAllowedValue(options.month, ['numeric', '2-digit', 'short', 'long', 'narrow'])) {
+    normalized.month = options.month;
+  }
+
+  if (isAllowedValue(options.day, ['numeric', '2-digit'])) {
+    normalized.day = options.day;
+  }
+
+  if (isAllowedValue(options.dateStyle, ['full', 'long', 'medium', 'short'])) {
+    normalized.dateStyle = options.dateStyle;
+  }
+
+  return Object.keys(normalized).length > 0 ? normalized : null;
+}
+
+function isAllowedValue(value, allowedValues) {
+  return typeof value === 'string' && allowedValues.includes(value);
+}
+
+function usesMonthOrDay(options) {
+  return Boolean(options.month || options.day || options.dateStyle);
+}
+
+function formatDateRange(startDate, endDate, dateRangeSeparator) {
+  if (startDate && endDate) {
+    return startDate === endDate ? startDate : `${startDate}${dateRangeSeparator}${endDate}`;
+  }
+
+  return startDate || endDate || '';
+}
+
+function normalizeDateRangeSeparator(value) {
+  return typeof value === 'string' && value.length > 0 ? value : ' -- ';
 }
 
 function sectionListTemplate(id, title, body) {

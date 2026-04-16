@@ -13,7 +13,7 @@ dotenv.config({ path: envPath });
 
 const port = normalizePort(process.env.PORT || '3000');
 const host = process.env.HOST || '127.0.0.1';
-const theme = process.env.THEME || 'jsonresume-theme-even';
+const theme = process.env.THEME || 'jsonresume-theme-flat-reordered';
 const resumedBin = path.join(cwd, 'node_modules', 'resumed', 'bin', 'resumed.js');
 
 buildResume();
