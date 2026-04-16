@@ -599,7 +599,11 @@ function formatDateRange(startDate, endDate, dateRangeSeparator) {
     return startDate === endDate ? startDate : `${startDate}${dateRangeSeparator}${endDate}`;
   }
 
-  return startDate || endDate || '';
+  if (startDate) {
+    return `${startDate}${dateRangeSeparator}Present`;
+  }
+
+  return endDate || '';
 }
 
 function normalizeDateRangeSeparator(value) {

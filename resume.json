@@ -71,6 +71,11 @@
     },
     "work": [
         {
+            "company": "Clear/uQualify",
+            "position": "CTO",
+            "startDate": "2019-06-05"
+        },
+        {
             "company": "Eurostar",
             "position": "Lead/Senior JavaScript Developer",
             "website": "https://www.eurostar.com/",
@@ -94,7 +99,6 @@
         {
             "company": "Tido Music",
             "position": "Senior JavaScript Developer (Contract)",
-            "website": "https://tido-music.com",
             "startDate": "2016-04-04",
             "endDate": "2016-05-11",
             "summary": "A mobile application to help teach piano with courses supplied by famous pianists and music tutition companies.",
@@ -108,7 +112,6 @@
         {
             "company": "Concrete Media",
             "position": "Senior Engineer/Team Lead",
-            "website": "https://concreteplatform.com",
             "startDate": "2012-09-10",
             "endDate": "2016-03-31",
             "summary": "A digital asset management platform for retailers, with workflow, planning, communications and job management to aid collaboration in an enterprise environment.",
