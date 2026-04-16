@@ -5,7 +5,7 @@
   "description": "Personal CV/resume site generated from JSON Resume data.",
   "scripts": {
     "build": "node scripts/build-html.js",
-    "dev": "node --watch --watch-path=dev.js --watch-path=resume.json --watch-path=.env dev.js",
+    "dev": "node --watch --watch-path=scripts/dev.js --watch-path=resume.json --watch-path=.env scripts/dev.js",
     "render": "npm run build",
     "validate": "resumed validate resume.json"
   },

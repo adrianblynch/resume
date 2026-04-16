@@ -4,7 +4,7 @@ const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 const dotenv = require('dotenv');
 
-const cwd = __dirname;
+const cwd = path.join(__dirname, '..');
 const envPath = path.join(cwd, '.env');
 const resumePath = path.join(cwd, 'resume.json');
 const htmlPath = path.join(cwd, 'resume.html');

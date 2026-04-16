@@ -40,7 +40,7 @@ Run the local preview server with automatic rebuilds:
 npm run dev
 ```
 
-This uses Node's built-in watch mode to watch `dev.js`, `resume.json`, and `.env`. On each change it:
+This uses Node's built-in watch mode to watch `scripts/dev.js`, `resume.json`, and `.env`. On each change it:
 
 1. validates `resume.json`
 2. regenerates `resume.html`
@@ -75,7 +75,7 @@ npx resumed render resume.json --theme jsonresume-theme-flat-reordered --output 
 
 ## Project Files
 
-- [`dev.js`](./dev.js): local preview server and rebuild entrypoint
+- [`scripts/dev.js`](./scripts/dev.js): local preview server and rebuild entrypoint
 - [`.env`](./.env): local preview configuration
 - [`resume.json`](./resume.json): source resume data
 - [`resume.html`](./resume.html): generated static HTML output
