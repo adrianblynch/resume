@@ -167,6 +167,28 @@
                 "Ensured the smooth start-up of new hires with guides, documentation and application and code walk-throughs.",
                 "Started Code Club sessions to promote discussion and demos of interest.",
                 "Line managed developers, doing one-to-ones, goal setting and performance reviews."
+            ],
+            "skills": [
+                "ColdFusion",
+                "SQL",
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "jQuery",
+                "SQL Server",
+                "Node",
+                "REST",
+                "Backbone",
+                "Marionette",
+                "Rivets",
+                "MVC",
+                "MVVM",
+                "Graph databases",
+                "OrientDB",
+                "TDD",
+                "Integration testing",
+                "E2E testing",
+                "Mentoring"
             ]
         },
         {
