@@ -29,6 +29,12 @@ npm run build
 
 `npm run render` is an alias for the same command, and it uses the active `THEME` from [`.env`](./.env).
 
+Generate the design variant HTML files and comparison index:
+
+```bash
+npm run variants
+```
+
 Run the local preview server with automatic rebuilds:
 
 ```bash
@@ -54,6 +60,12 @@ This writes the generated site page to:
 resume.html
 ```
 
+Variant pages are written to:
+
+```text
+variants/
+```
+
 You can also run the underlying CLI directly:
 
 ```bash
@@ -66,12 +78,15 @@ npx resumed render resume.json --theme jsonresume-theme-flat-reordered --output 
 2. Run `npm run dev`
 3. Open `http://127.0.0.1:3000` or your configured host and port
 4. Save changes and let Node restart, validate, and rebuild automatically
-5. Deploy or copy `resume.html` to your personal website hosting setup
+5. Run `npm run variants` when you want to refresh the design comparison pages
+6. Deploy or copy `resume.html` to your personal website hosting setup
 
 ## Project Files
 
+- [`scripts/build-design-variants.js`](./scripts/build-design-variants.js): generates the design variants and comparison index
 - [`scripts/dev.js`](./scripts/dev.js): local preview server and rebuild entrypoint
 - [`.env`](./.env): local preview configuration
 - [`resume.json`](./resume.json): source resume data
 - [`resume.html`](./resume.html): generated static HTML output
+- [`variants/`](./variants): generated design variants and comparison page
 - [`package.json`](./package.json): project scripts and dependencies

@@ -1,0 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=DM+Sans:400,600,800|Playfair+Display:700);
+@import url(css/v2-base.css);
+
+:root {
+  --paper: #f7f2ec;
+  --header: #efe2d4;
+  --ink: #24201d;
+  --muted: #766a61;
+  --rule: #d8c7b6;
+  --accent: #a2413b;
+  --accent-2: #346e7a;
+  --body-font: "DM Sans", Arial, sans-serif;
+  --heading-font: "Playfair Display", Georgia, serif;
+  --title-size: 50px;
+  --section-title-size: 24px;
+}
+
+.container {
+  max-width: 850px;
+}

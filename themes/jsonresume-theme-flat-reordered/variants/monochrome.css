@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:400,600,900);
+@import url(css/v2-base.css);
+
+:root {
+  --paper: #ffffff;
+  --header: #ffffff;
+  --ink: #111111;
+  --muted: #5e5e5e;
+  --rule: #cfcfcf;
+  --accent: #111111;
+  --accent-2: #555555;
+  --body-font: Inter, Arial, sans-serif;
+  --heading-font: Inter, Arial, sans-serif;
+  --title-size: 52px;
+  --title-weight: 900;
+  --section-rule-width: 2px;
+}
+
+#header {
+  border-bottom: 10px solid var(--ink);
+}

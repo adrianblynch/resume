@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Libre+Franklin:400,600,800|Source+Serif+4:700);
+@import url(css/v2-base.css);
+
+:root {
+  --paper: #fcfbf6;
+  --header: #f0ede2;
+  --ink: #22201a;
+  --muted: #716c60;
+  --rule: #d5cdbb;
+  --accent: #6f5a2b;
+  --accent-2: #2d6d69;
+  --body-font: "Libre Franklin", Arial, sans-serif;
+  --heading-font: "Source Serif 4", Georgia, serif;
+  --section-title-size: 22px;
+  --container-width: 820px;
+}
+
+section {
+  border-top-style: double;
+  border-top-width: 3px;
+}

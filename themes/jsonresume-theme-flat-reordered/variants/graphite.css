@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:400,600,800|IBM+Plex+Mono:500);
+@import url(css/v2-base.css);
+
+:root {
+  --paper: #17191c;
+  --header: #0f1012;
+  --header-ink: #f2f4f6;
+  --header-subtitle: #9aa4ae;
+  --ink: #edf0f2;
+  --muted: #a2abb3;
+  --rule: #333941;
+  --accent: #f0c15f;
+  --accent-2: #78d1c2;
+  --body-font: Inter, Arial, sans-serif;
+  --heading-font: Inter, Arial, sans-serif;
+  --header-border: 1px;
+}
+
+blockquote {
+  background: #20242a;
+}

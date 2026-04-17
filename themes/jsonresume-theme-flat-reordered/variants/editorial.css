@@ -1,0 +1,232 @@
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Inter:400,600,700);
+
+:root {
+  --paper: #fbfaf7;
+  --ink: #22201d;
+  --muted: #706a62;
+  --rule: #d8d0c3;
+  --accent: #b23a2f;
+  --accent-soft: #efe3dd;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 15px;
+  margin: 0 0 76px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #6f211b;
+  text-decoration: underline;
+}
+
+p {
+  line-height: 1.68;
+  margin: 0;
+}
+
+p + p {
+  margin-top: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+section {
+  border-top: 1px solid var(--rule);
+  margin-top: 34px;
+  padding-top: 24px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  line-height: 1.65;
+  list-style: none;
+  padding-left: 18px;
+  position: relative;
+}
+
+li:before {
+  background: var(--accent);
+  border-radius: 50%;
+  content: "";
+  height: 5px;
+  left: 1px;
+  position: absolute;
+  top: 10px;
+  width: 5px;
+}
+
+blockquote {
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: normal;
+}
+
+h4 span:first-child {
+  color: var(--ink);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 820px;
+  padding: 0 34px;
+}
+
+.col-sm-6 {
+  margin-bottom: 12px;
+}
+
+.col-sm-12 h4 {
+  margin-top: 12px;
+}
+
+.col-sm-12 + .col-sm-12 {
+  margin-top: 30px;
+}
+
+#header {
+  background: var(--accent-soft);
+  border-bottom: 6px solid var(--accent);
+  margin-bottom: 34px;
+  padding: 58px 0 50px;
+}
+
+#header h1 {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 43px;
+  letter-spacing: 0;
+}
+
+#header h2 {
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+#content h3 {
+  color: var(--accent);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 21px;
+  margin-top: -3px;
+}
+
+#content aside {
+  padding-right: 32px;
+  text-align: right;
+}
+
+#profiles .network {
+  text-transform: capitalize;
+}
+
+#work .position,
+#volunteer .position,
+#education .area {
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#education .area:before {
+  content: "";
+}
+
+#education .studyType {
+  margin-left: 0;
+}
+
+#awards .summary,
+#publications .summary {
+  margin-top: 8px;
+}
+
+#publications .website a:before {
+  content: attr(href);
+}
+
+@media (min-width: 480px) {
+  .strike-through {
+    border-top: 1px solid var(--rule);
+    height: 22px;
+    margin-bottom: 0;
+    margin-top: 13px;
+    position: relative;
+  }
+
+  .strike-through span,
+  .strike-through a {
+    background: var(--paper);
+    position: absolute;
+  }
+
+  .strike-through span:first-child {
+    margin-top: -13px;
+    padding-right: 18px;
+  }
+
+  .strike-through span + span {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: -10px;
+    padding-left: 18px;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #content aside {
+    margin-bottom: 14px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  #publications .website a:before {
+    content: "View publication";
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .date {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .strike-through span {
+    display: block;
+  }
+
+  #header {
+    margin-bottom: 18px;
+    padding: 42px 0;
+  }
+}

@@ -1,0 +1,236 @@
+@import url(https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:400,700|Fraunces:600,700);
+
+:root {
+  --paper: #fbf8f1;
+  --ink: #24211d;
+  --muted: #756f66;
+  --rule: #ded6c8;
+  --accent: #3f7f72;
+  --accent-2: #a94d35;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Atkinson Hyperlegible", Arial, sans-serif;
+  margin: 0 0 78px;
+}
+
+a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+a:focus,
+a:hover {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.64;
+  margin: 0;
+}
+
+p + p {
+  margin-top: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+section {
+  margin-top: 32px;
+}
+
+section:after {
+  background: var(--rule);
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  line-height: 1.68;
+  list-style: none;
+  padding-left: 20px;
+  position: relative;
+}
+
+li:before {
+  background: var(--accent-2);
+  border-radius: 50%;
+  content: "";
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 6px;
+}
+
+blockquote {
+  border-left: 5px solid var(--accent);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: normal;
+}
+
+h4 span:first-child {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.container {
+  max-width: 790px;
+  padding: 0 30px;
+}
+
+.col-sm-6 {
+  margin-bottom: 10px;
+}
+
+.col-sm-12 h4 {
+  margin-top: 12px;
+}
+
+.col-sm-12 + .col-sm-12 {
+  margin-top: 30px;
+}
+
+#header {
+  background: #efe8da;
+  margin-bottom: 30px;
+  padding: 52px 0 44px;
+}
+
+#header h1 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+#header h2 {
+  color: var(--muted);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+#content h3 {
+  color: var(--accent-2);
+  font-family: Fraunces, Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+  margin-top: -4px;
+}
+
+#content aside {
+  padding-right: 30px;
+  text-align: right;
+}
+
+#profiles .network {
+  text-transform: capitalize;
+}
+
+#work .position,
+#volunteer .position,
+#education .area {
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#education .area:before {
+  content: "";
+}
+
+#education .studyType {
+  color: var(--muted);
+  margin-left: 0;
+}
+
+#awards .summary,
+#publications .summary {
+  margin-top: 8px;
+}
+
+#publications .website a:before {
+  content: attr(href);
+}
+
+@media (min-width: 480px) {
+  .strike-through {
+    border-top: 1px solid var(--rule);
+    height: 22px;
+    margin-bottom: 0;
+    margin-top: 13px;
+    position: relative;
+  }
+
+  .strike-through span,
+  .strike-through a {
+    background: var(--paper);
+    position: absolute;
+  }
+
+  .strike-through span:first-child {
+    margin-top: -13px;
+    padding-right: 20px;
+  }
+
+  .strike-through span + span {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: -10px;
+    padding-left: 20px;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #content aside {
+    margin-bottom: 14px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  #publications .website a:before {
+    content: "View publication";
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 31px;
+  }
+
+  .date {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .strike-through span {
+    display: block;
+  }
+
+  #header {
+    padding: 40px 0 34px;
+  }
+}

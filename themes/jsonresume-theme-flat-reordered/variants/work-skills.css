@@ -1,0 +1,28 @@
+.work-skills {
+  margin-top: 12px;
+}
+
+.work-skills strong {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.work-skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.work-skills li {
+  background: var(--rule, rgba(127, 127, 127, 0.14));
+  border: 1px solid var(--section-border, transparent);
+  border-radius: 4px;
+  color: var(--ink, currentColor);
+  line-height: 1.35;
+  padding: 4px 8px;
+}
+
+.work-skills li:before {
+  content: none;
+}

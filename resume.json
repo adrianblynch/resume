@@ -94,6 +94,15 @@
                 "Improved and promoted security best practices by working with penetration testers for front-end and backend test runs, fostering awareness in teams and working with the Lead Architect to homogenise security practices across teams.",
                 "Promoted code reuse with shared components, component libraries and utility code.",
                 "Took part in the technical analysis of a new inventory system from a 3rd party supplier and developed a GraphQL API as an abstraction over the new inventory system's API."
+            ],
+            "skills": [
+                "JavaScript",
+                "React, Riot",
+                "Redux, Apollo Client",
+                "Backbone, Marionette",
+                "HTML",
+                "CSS, SCSS, BEM, Susy",
+                "jQuery"
             ]
         },
         {

@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:400,600,800);
+@import url(css/v2-base.css);
+
+:root {
+  --paper: #fbfbff;
+  --header: linear-gradient(135deg, #20214a, #006e8f 55%, #b94472);
+  --header-ink: #ffffff;
+  --header-subtitle: #d8f4ff;
+  --ink: #202238;
+  --muted: #686d83;
+  --rule: #dde1f2;
+  --accent: #6f42c1;
+  --accent-2: #008c7f;
+  --body-font: Inter, Arial, sans-serif;
+  --heading-font: Inter, Arial, sans-serif;
+  --title-size: 48px;
+  --bullet-radius: 0;
+}
+
+#content h3 {
+  color: #b94472;
+}

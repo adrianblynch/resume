@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:400,700);
+@import url(css/v2-base.css);
+
+:root {
+  --paper: #ffffff;
+  --header: #000000;
+  --header-ink: #ffffff;
+  --header-subtitle: #ffffff;
+  --ink: #000000;
+  --muted: #333333;
+  --rule: #000000;
+  --accent: #005fcc;
+  --accent-2: #b00020;
+  --body-font: "Atkinson Hyperlegible", Arial, sans-serif;
+  --heading-font: "Atkinson Hyperlegible", Arial, sans-serif;
+  --section-rule-width: 2px;
+  --bullet-size: 7px;
+  --title-size: 46px;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}

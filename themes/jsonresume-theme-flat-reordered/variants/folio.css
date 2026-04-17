@@ -1,0 +1,240 @@
+@import url(https://fonts.googleapis.com/css?family=Manrope:400,600,700,800);
+
+:root {
+  --paper: #f8f7f2;
+  --ink: #1d2320;
+  --muted: #64706a;
+  --rule: #d8ddd6;
+  --accent: #0f766e;
+  --accent-2: #d94f2b;
+  --panel: #ffffff;
+}
+
+body {
+  background: linear-gradient(180deg, #e7f1ee 0, var(--paper) 260px);
+  color: var(--ink);
+  font-family: Manrope, Arial, sans-serif;
+  margin: 0 0 78px;
+}
+
+a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+a:focus,
+a:hover {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.58;
+  margin: 0;
+}
+
+p + p {
+  margin-top: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+section {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  box-shadow: 0 18px 44px rgba(29, 35, 32, 0.08);
+  margin-top: 18px;
+  padding: 24px 18px 18px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  line-height: 1.7;
+  list-style: none;
+  padding-left: 22px;
+  position: relative;
+}
+
+li:before {
+  background: var(--accent-2);
+  border-radius: 2px;
+  content: "";
+  height: 8px;
+  left: 0;
+  position: absolute;
+  top: 9px;
+  width: 8px;
+}
+
+blockquote {
+  border-left: 5px solid var(--accent);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: normal;
+}
+
+h4 span:first-child {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.container {
+  max-width: 860px;
+  padding: 0 30px;
+}
+
+.col-sm-6 {
+  margin-bottom: 12px;
+}
+
+.col-sm-12 h4 {
+  margin-top: 10px;
+}
+
+.col-sm-12 + .col-sm-12 {
+  border-top: 1px solid var(--rule);
+  margin-top: 24px;
+  padding-top: 22px;
+}
+
+#header {
+  background: transparent;
+  margin-bottom: 16px;
+  padding: 54px 0 28px;
+}
+
+#header .container {
+  border-bottom: 4px solid var(--accent-2);
+  padding-bottom: 26px;
+}
+
+#header h1 {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+#header h2 {
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+#content h3 {
+  color: var(--accent-2);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin-top: 1px;
+  text-transform: uppercase;
+}
+
+#content aside {
+  padding-right: 26px;
+  text-align: right;
+}
+
+#profiles .network {
+  text-transform: capitalize;
+}
+
+#work .position,
+#volunteer .position,
+#education .area {
+  color: var(--accent);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+#education .area:before {
+  content: "";
+}
+
+#education .studyType {
+  color: var(--muted);
+  margin-left: 0;
+}
+
+#awards .summary,
+#publications .summary {
+  margin-top: 8px;
+}
+
+#publications .website a:before {
+  content: attr(href);
+}
+
+@media (min-width: 480px) {
+  .strike-through {
+    display: flex;
+    gap: 18px;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  .strike-through span,
+  .strike-through a {
+    background: transparent;
+    position: static;
+  }
+
+  .strike-through span + span {
+    color: var(--muted);
+    flex: 0 0 auto;
+    font-size: 13px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 20px 16px 16px;
+  }
+
+  #content aside {
+    margin-bottom: 12px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  #publications .website a:before {
+    content: "View publication";
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .date {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .strike-through span {
+    display: block;
+  }
+
+  #header {
+    padding: 42px 0 18px;
+  }
+}

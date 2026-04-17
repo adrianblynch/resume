@@ -1,0 +1,229 @@
+@import url(https://fonts.googleapis.com/css?family=DM+Serif+Display:400|Work+Sans:400,600,700);
+
+:root {
+  --paper: #fffdf8;
+  --ink: #181614;
+  --muted: #6e6861;
+  --rule: #ddd4c8;
+  --accent: #c4334a;
+  --accent-2: #1f8a70;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Work Sans", Arial, sans-serif;
+  margin: 0 0 78px;
+}
+
+a {
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+a:focus,
+a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.62;
+  margin: 0;
+}
+
+p + p {
+  margin-top: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+section {
+  border-top: 1px solid var(--rule);
+  margin-top: 32px;
+  padding-top: 24px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  line-height: 1.68;
+  list-style: none;
+  padding-left: 20px;
+  position: relative;
+}
+
+li:before {
+  color: var(--accent);
+  content: "\f052";
+  font: 13px Octicons;
+  left: 0;
+  position: absolute;
+  top: 6px;
+}
+
+blockquote {
+  border-left: 5px solid var(--accent);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: normal;
+}
+
+h4 span:first-child {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.container {
+  max-width: 850px;
+  padding: 0 34px;
+}
+
+.col-sm-6 {
+  margin-bottom: 12px;
+}
+
+.col-sm-12 h4 {
+  margin-top: 12px;
+}
+
+.col-sm-12 + .col-sm-12 {
+  margin-top: 30px;
+}
+
+#header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 32px;
+  padding: 52px 0 36px;
+}
+
+#header h1 {
+  color: var(--accent);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 62px;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+#header h2 {
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#content h3 {
+  color: var(--accent);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 27px;
+  margin-top: -7px;
+}
+
+#content aside {
+  padding-right: 32px;
+  text-align: right;
+}
+
+#profiles .network {
+  text-transform: capitalize;
+}
+
+#work .position,
+#volunteer .position,
+#education .area {
+  color: var(--accent-2);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#education .area:before {
+  content: "";
+}
+
+#education .studyType {
+  color: var(--muted);
+  margin-left: 0;
+}
+
+#awards .summary,
+#publications .summary {
+  margin-top: 8px;
+}
+
+#publications .website a:before {
+  content: attr(href);
+}
+
+@media (min-width: 480px) {
+  .strike-through {
+    border-top: 1px solid var(--rule);
+    height: 22px;
+    margin-bottom: 0;
+    margin-top: 13px;
+    position: relative;
+  }
+
+  .strike-through span,
+  .strike-through a {
+    background: var(--paper);
+    position: absolute;
+  }
+
+  .strike-through span:first-child {
+    margin-top: -13px;
+    padding-right: 20px;
+  }
+
+  .strike-through span + span {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: -10px;
+    padding-left: 20px;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #content aside {
+    margin-bottom: 14px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  #publications .website a:before {
+    content: "View publication";
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 38px;
+  }
+
+  .date {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .strike-through span {
+    display: block;
+  }
+
+  #header {
+    padding: 40px 0 30px;
+  }
+}

@@ -154,6 +154,16 @@ const sectionTemplates = {
         {{/each}}
       </ul>
       {{/if}}
+      {{#if skills.length}}
+      <div class="work-skills">
+        <strong>Skills</strong>
+        <ul>
+          {{#each skills}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      {{/if}}
   `)),
   volunteer: Handlebars.compile(sectionListTemplate('volunteer', 'Volunteer', `
       <h4 class="strike-through">

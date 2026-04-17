@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:400,600,800|Merriweather:700);
+@import url(css/v2-base.css);
+
+:root {
+  --paper: #f7f5ed;
+  --header: #1f3c4d;
+  --header-ink: #ffffff;
+  --header-subtitle: #d8cfae;
+  --ink: #1e2b2d;
+  --muted: #65736f;
+  --rule: #d7d0bc;
+  --accent: #bd5b2d;
+  --accent-2: #2e6f65;
+  --heading-font: Merriweather, Georgia, serif;
+  --container-width: 830px;
+  --header-border: 6px;
+}

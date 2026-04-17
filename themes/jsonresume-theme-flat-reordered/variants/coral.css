@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Space+Grotesk:400,600,700);
+@import url(css/v2-base.css);
+
+:root {
+  --paper: #fff9f6;
+  --header: #2b2630;
+  --header-title: #ff8f70;
+  --header-subtitle: #ffd6c8;
+  --ink: #29252b;
+  --muted: #7c7078;
+  --rule: #ead6cd;
+  --accent: #e85d48;
+  --accent-2: #1f8c88;
+  --body-font: "Space Grotesk", Arial, sans-serif;
+  --heading-font: "Space Grotesk", Arial, sans-serif;
+  --bullet-radius: 2px;
+  --header-border: 5px;
+}
+
+#content h3 {
+  text-transform: uppercase;
+}

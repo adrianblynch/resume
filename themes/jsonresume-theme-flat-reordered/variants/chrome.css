@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,400..700&family=Roboto:wght@400;500;700&display=swap");
+@import url(css/v2-base.css);
+
+:root {
+  --paper: #1f1f1f;
+  --header: #1f1f1f;
+  --header-ink: #e8eaed;
+  --header-title: #e8eaed;
+  --header-subtitle: #bdc1c6;
+  --ink: #e8eaed;
+  --muted: #bdc1c6;
+  --rule: #3c4043;
+  --accent: #8ab4f8;
+  --accent-2: #f28b82;
+  --section-bg: #202124;
+  --section-border: #3c4043;
+  --section-radius: 8px;
+  --body-font: "Google Sans Flex", Roboto, Arial, sans-serif;
+  --heading-font: "Google Sans Flex", Roboto, Arial, sans-serif;
+  --body-size: 15px;
+  --line-height: 1.62;
+  --container-width: 860px;
+  --title-size: 46px;
+  --subtitle-size: 19px;
+  --header-padding: 54px 0 46px;
+}
+
+body {
+  background:
+    linear-gradient(180deg, #1f1f1f 0, #1f1f1f 72%, #191a1b 100%);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover,
+a:focus {
+  color: #aecbfa;
+}
+
+section {
+  border: 1px solid var(--section-border);
+  border-radius: 8px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+  margin-top: 18px;
+  padding: 24px 20px 20px;
+}
+
+section:nth-of-type(2n) {
+  border-color: rgba(138, 180, 248, 0.28);
+}
+
+section:nth-of-type(3n) {
+  border-color: rgba(242, 139, 130, 0.3);
+}
+
+blockquote {
+  background: #292a2d;
+  border-left-color: var(--accent);
+}
+
+li:before {
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+#header {
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 28px;
+}
+
+#header h1 {
+  font-weight: 500;
+}
+
+#header h2 {
+  font-weight: 400;
+}
+
+#content h3 {
+  color: #aecbfa;
+  font-weight: 500;
+}
+
+#work .position,
+#volunteer .position,
+#education .area {
+  color: #81c995;
+  font-weight: 700;
+}
+
+.strike-through span,
+.strike-through a {
+  background: var(--section-bg);
+}
+
+.work-skills li {
+  background: #174ea6;
+  border-color: #174ea6;
+  color: #d2e3fc;
+}
+
+.work-skills li:nth-child(3n + 1) {
+  background: #5f2120;
+  border-color: #8c2f2b;
+  color: #fce8e6;
+}
+
+.work-skills li:nth-child(3n + 2) {
+  background: #184d2f;
+  border-color: #2d6f43;
+  color: #ceead6;
+}
+
+.work-skills li:nth-child(3n + 3) {
+  background: #5b4a1f;
+  border-color: #8f6f24;
+  color: #feefc3;
+}

@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:400,600,800);
+@import url(css/v2-base.css);
+
+:root {
+  --paper: #f4fbf7;
+  --header: #dff3e9;
+  --ink: #17322a;
+  --muted: #61766f;
+  --rule: #c9e4d8;
+  --accent: #08785f;
+  --accent-2: #9d4b2f;
+  --section-bg: #ffffff;
+  --section-border: #cfe7dc;
+  --section-radius: 8px;
+  --section-padding: 22px;
+  --section-gap: 18px;
+}
+
+section {
+  border: 1px solid var(--section-border);
+  padding: 22px 18px 18px;
+}

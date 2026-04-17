@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Newsreader:400,700|Roboto+Condensed:700);
+@import url(css/v2-base.css);
+
+:root {
+  --paper: #fbfaf6;
+  --header: #fbfaf6;
+  --ink: #191919;
+  --muted: #66615b;
+  --rule: #c9c2b7;
+  --accent: #9f1d21;
+  --accent-2: #2f5d75;
+  --body-font: Newsreader, Georgia, serif;
+  --heading-font: "Roboto Condensed", Arial, sans-serif;
+  --body-size: 15px;
+  --line-height: 1.55;
+  --title-size: 50px;
+  --header-border: 4px;
+}
+
+#header h2,
+#content h3 {
+  text-transform: uppercase;
+}

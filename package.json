@@ -10,6 +10,7 @@
     "build": "node scripts/build-html.js",
     "dev": "node --watch --watch-path=scripts/dev.js --watch-path=resume.json --watch-path=.env scripts/dev.js",
     "render": "npm run build",
+    "variants": "node scripts/build-design-variants.js",
     "validate": "resumed validate resume.json"
   },
   "keywords": [],

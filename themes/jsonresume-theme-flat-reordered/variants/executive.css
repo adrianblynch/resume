@@ -1,0 +1,230 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Serif+4:400,600,700|Inter:400,600,700);
+
+:root {
+  --paper: #f9fafb;
+  --ink: #171923;
+  --muted: #626b77;
+  --rule: #d8dde4;
+  --accent: #7a5c22;
+  --panel: #ffffff;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, Arial, sans-serif;
+  margin: 0 0 82px;
+}
+
+a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+a:focus,
+a:hover {
+  color: #4e3912;
+  text-decoration: underline;
+}
+
+p {
+  line-height: 1.62;
+  margin: 0;
+}
+
+p + p {
+  margin-top: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+section {
+  background: var(--panel);
+  border-top: 3px solid var(--accent);
+  margin-top: 24px;
+  padding: 22px 0 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  line-height: 1.68;
+  list-style: none;
+  padding-left: 18px;
+  position: relative;
+}
+
+li:before {
+  background: var(--accent);
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 13px;
+  width: 9px;
+}
+
+blockquote {
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: normal;
+}
+
+h4 span:first-child {
+  color: var(--ink);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 800px;
+  padding: 0 32px;
+}
+
+.col-sm-6 {
+  margin-bottom: 10px;
+}
+
+.col-sm-12 h4 {
+  margin-top: 12px;
+}
+
+.col-sm-12 + .col-sm-12 {
+  margin-top: 30px;
+}
+
+#header {
+  background: #20242c;
+  color: #fff;
+  margin-bottom: 32px;
+  padding: 54px 0 48px;
+}
+
+#header h1 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 47px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+#header h2 {
+  color: #d8c99f;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#content h3 {
+  color: var(--accent);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: -3px;
+}
+
+#content aside {
+  padding-right: 30px;
+  text-align: right;
+}
+
+#profiles .network {
+  text-transform: capitalize;
+}
+
+#work .position,
+#volunteer .position,
+#education .area {
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#education .area:before {
+  content: "";
+}
+
+#education .studyType {
+  margin-left: 0;
+}
+
+#awards .summary,
+#publications .summary {
+  margin-top: 8px;
+}
+
+#publications .website a:before {
+  content: attr(href);
+}
+
+@media (min-width: 480px) {
+  .strike-through {
+    border-top: 1px solid var(--rule);
+    height: 22px;
+    margin-bottom: 0;
+    margin-top: 13px;
+    position: relative;
+  }
+
+  .strike-through span,
+  .strike-through a {
+    background: var(--panel);
+    position: absolute;
+  }
+
+  .strike-through span:first-child {
+    margin-top: -13px;
+    padding-right: 20px;
+  }
+
+  .strike-through span + span {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: -10px;
+    padding-left: 20px;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #content aside {
+    margin-bottom: 14px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  #publications .website a:before {
+    content: "View publication";
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .date {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .strike-through span {
+    display: block;
+  }
+
+  #header {
+    padding: 42px 0;
+  }
+}
