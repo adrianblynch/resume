@@ -134,6 +134,16 @@
                 "Designed and built a Node based RESTful API using Hapi.",
                 "Migrated data persistence from MySQL to DynamoDB.",
                 "Expanded the admin site using React and Redux with Material UI."
+            ],
+            "skills": [
+                "React",
+                "Redux",
+                "DynamoDB",
+                "Node",
+                "Hapi",
+                "REST",
+                "MySQL",
+                "Material UI"
             ]
         },
         {
