@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Personal CV/resume site generated from JSON Resume data.",
+  "engines": {
+    "node": "20.20.2"
+  },
   "scripts": {
     "build": "node scripts/build-html.js",
     "dev": "node --watch --watch-path=scripts/dev.js --watch-path=resume.json --watch-path=.env scripts/dev.js",

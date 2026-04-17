@@ -7,11 +7,6 @@ It uses:
 - `resumed` for validation and rendering
 - `jsonresume-theme-flat-reordered` as the HTML theme
 
-## Requirements
-
-- Node.js 18+ should work for rendering
-- Node.js 20+ is recommended to avoid an `npm` engine warning from one transitive dependency during install
-
 ## Install
 
 ```bash
