@@ -96,13 +96,31 @@
                 "Took part in the technical analysis of a new inventory system from a 3rd party supplier and developed a GraphQL API as an abstraction over the new inventory system's API."
             ],
             "skills": [
-                "JavaScript",
-                "React, Riot",
-                "Redux, Apollo Client",
-                "Backbone, Marionette",
-                "HTML",
-                "CSS, SCSS, BEM, Susy",
-                "jQuery"
+                "React",
+                "Redux",
+                "Hapi",
+                "SCSS",
+                "Styled Components",
+                "Apollo",
+                "REST",
+                "GraphQL",
+                "Express",
+                "Koa",
+                "CircleCI",
+                "Heroku",
+                "AWS",
+                "Prettier",
+                "Mocha",
+                "Chai",
+                "Jest",
+                "Enzyme",
+                "Cucumber",
+                "WebdriverIO",
+                "Nightwatch",
+                "CodeceptJS",
+                "Cypress",
+                "Agile",
+                "Secure Development"
             ]
         },
         {
