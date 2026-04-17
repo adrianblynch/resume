@@ -17,7 +17,8 @@
             "hiddenSections": [
                 "contact",
                 "interests",
-                "profiles"
+                "profiles",
+                "skills"
             ],
             "sectionTitles": {
                 "contact": "Contact",
