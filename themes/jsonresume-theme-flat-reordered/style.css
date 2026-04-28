@@ -83,6 +83,13 @@ h4 span:first-child {
   color: #95a5a6;
   font-size: 24px;
 }
+#header .header-role {
+  color: #95a5a6;
+  display: block;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: inherit;
+}
 #content h3 {
   color: #f1c40f;
   font-size: 26px;

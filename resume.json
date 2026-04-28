@@ -247,6 +247,17 @@
                 "Progressed from junior to mid-level developer.",
                 "Liaised with stakeholders for requirements gathering. ",
                 "Introduced better development techniques such as modularisation, encapsulation, DRY principals and code generation."
+            ],
+            "skills": [
+                "ColdFusion",
+                "HTML",
+                "JavaScript",
+                "jQuery",
+                "CSS",
+                "SQL",
+                "SQL Server",
+                "Flash",
+                "ActionScript"
             ]
         }
     ],
