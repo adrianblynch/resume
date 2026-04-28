@@ -72,9 +72,22 @@
     },
     "work": [
         {
-            "company": "Clear/uQualify",
+            "company": "uQualify",
             "position": "CTO",
-            "startDate": "2019-06-05"
+            "website": "https://uqualify.co",
+            "startDate": "2019-06-05",
+            "summary": "Joined uQualify as interim CTO after the previous CTO and developer left, re-establishing control of the platform, infrastructure and delivery pipeline while bridging the gap between the directors and external technical partners. Led the evolution of the business from a Laravel-based card payments gateway into the white-labelled uQualify platform, expanding PSP coverage, ecommerce plugins, multi-portal onboarding/KYC/admin tooling, and later banking, ledger, wallet and crypto/custody capabilities. Regained and audited AWS access, introduced GitHub and deployment automation, improved security and operational controls, and hired and managed a distributed engineering team across multiple time zones.",
+            "skills": [
+                "Laravel",
+                "PHP",
+                "MySQL",
+                "Aurora",
+                "AWS",
+                "EC2",
+                "Crypto",
+                "Smart contracts",
+                "Ethereum"
+            ]
         },
         {
             "company": "Eurostar",
