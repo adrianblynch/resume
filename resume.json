@@ -37,7 +37,6 @@
         }
     },
     "basics": {
-        "pronouns": "Yee/Yee",
         "name": "Adrian Lynch",
         "label": "CTO & Lead/Senior Developer",
         "picture": "",
@@ -92,7 +91,7 @@
         {
             "company": "Eurostar",
             "position": "Lead/Senior JavaScript Developer",
-            "website": "https://www.eurostar.com/",
+            "website": "https://eurostar.com",
             "startDate": "2016-05-17",
             "endDate": "2018-07-27",
             "summary": "Eurostar began a project to update their .com website to a number of responsive single page applications and supporting APIs. I joined as a Senior Developer and moved to Lead Developer across additional projects in the upgrade. I finished at Eurostar as Lead Developer on a projected 18 month long multi-part project to replace a '70s era mainframe inventory system and to replace multiple booking tools used internally and externally with a new front-end application.",

@@ -2,6 +2,14 @@ const fs = require('node:fs');
 const path = require('node:path');
 const Handlebars = require('handlebars');
 
+Handlebars.registerHelper('displayUrl', (value) => {
+  if (typeof value !== 'string') {
+    return value;
+  }
+
+  return value.replace(/^https?:\/\//i, '');
+});
+
 const defaultSectionOrder = [
   'contact',
   'about',
@@ -35,10 +43,12 @@ const outerTemplate = Handlebars.compile(`<!doctype html>
         <div class="row">
           <div class="col-sm-9 col-sm-push-3">
             {{#if resume.basics.name}}
-            <h1>{{resume.basics.name}}</h1>
-            {{/if}}
-            {{#if resume.basics.label}}
-            <h2>{{resume.basics.label}}</h2>
+            <h1>
+              {{resume.basics.name}}
+              {{#if resume.basics.label}}
+              <span class="header-role">{{resume.basics.label}}</span>
+              {{/if}}
+            </h1>
             {{/if}}
           </div>
         </div>
@@ -75,7 +85,7 @@ const sectionTemplates = {
         <div class="col-sm-6">
           <strong>Website</strong>
           <div class="website">
-            <a href="{{website}}">{{website}}</a>
+            <a href="{{website}}">{{displayUrl website}}</a>
           </div>
         </div>
         {{/if}}
@@ -135,7 +145,7 @@ const sectionTemplates = {
       </h4>
       {{#if website}}
       <div class="website pull-right">
-        <a href="{{website}}">{{website}}</a>
+        <a href="{{website}}">{{displayUrl website}}</a>
       </div>
       {{/if}}
       {{#if position}}
@@ -172,7 +182,7 @@ const sectionTemplates = {
       </h4>
       {{#if website}}
       <div class="website pull-right">
-        <a href="{{website}}">{{website}}</a>
+        <a href="{{website}}">{{displayUrl website}}</a>
       </div>
       {{/if}}
       {{#if position}}
