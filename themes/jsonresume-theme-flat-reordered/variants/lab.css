@@ -5,7 +5,7 @@
   --ink: #1b2335;
   --muted: #5d6b80;
   --rule: #dfe7ee;
-  --accent: #7059f6;
+  --accent: #6e56f0;
   --accent-2: #149c97;
   --section-bg: #ffffff;
   --section-border: #d9e4ec;
@@ -60,9 +60,14 @@ p+p {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   margin-top: 0;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 1.1;
+  margin-bottom: 10px;
 }
 
 section {
@@ -118,7 +123,7 @@ em {
   font-weight: normal;
 }
 
-h4 span:first-child {
+h3 span:first-child {
   color: var(--ink);
   font-family: var(--heading-font);
   font-weight: 800;
@@ -128,7 +133,7 @@ h4 span:first-child {
   margin-bottom: 10px;
 }
 
-.col-sm-12 h4 {
+.col-sm-12 h3 {
   margin-top: 12px;
 }
 
@@ -220,7 +225,7 @@ h4 span:first-child {
   background: var(--section-bg);
 }
 
-#content h3 {
+#content h2 {
   color: var(--header-ink);
   font-family: var(--heading-font);
   font-size: var(--section-title-size);
@@ -238,7 +243,7 @@ h4 span:first-child {
   width: 100%;
 }
 
-#content aside h3 {
+#content aside h2 {
   margin-bottom: 0;
 }
 

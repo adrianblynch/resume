@@ -37,9 +37,14 @@ p+p {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   margin-top: 0;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 1.1;
+  margin-bottom: 10px;
 }
 
 section {
@@ -78,7 +83,7 @@ em {
   font-weight: normal;
 }
 
-h4 span:first-child {
+h3 span:first-child {
   color: #000;
   font-weight: bold;
 }
@@ -92,7 +97,7 @@ h4 span:first-child {
   margin-bottom: 10px;
 }
 
-.col-sm-12 h4 {
+.col-sm-12 h3 {
   margin-top: 12px;
 }
 
@@ -114,7 +119,7 @@ h4 span:first-child {
   line-height: inherit;
 }
 
-#content h3 {
+#content h2 {
   color: #f1c40f;
   font-size: 26px;
   margin-top: -4px;

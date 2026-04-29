@@ -38,9 +38,14 @@ p + p {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   margin-top: 0;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 1.1;
+  margin-bottom: 10px;
 }
 
 section {
@@ -91,7 +96,7 @@ em {
   font-weight: normal;
 }
 
-h4 span:first-child {
+h3 span:first-child {
   color: var(--ink);
   font-weight: 700;
 }
@@ -105,7 +110,7 @@ h4 span:first-child {
   margin-bottom: 10px;
 }
 
-.col-sm-12 h4 {
+.col-sm-12 h3 {
   margin-top: 12px;
 }
 
@@ -132,7 +137,7 @@ h4 span:first-child {
   font-weight: 700;
 }
 
-#content h3 {
+#content h2 {
   color: var(--accent-2);
   font-family: Fraunces, Georgia, serif;
   font-size: 23px;

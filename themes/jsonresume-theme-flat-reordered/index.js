@@ -26,10 +26,10 @@ const defaultSectionOrder = [
 ];
 
 const outerTemplate = Handlebars.compile(`<!doctype html>
-<html>
+<html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{resume.basics.name}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
     <style type="text/css">
@@ -53,9 +53,9 @@ const outerTemplate = Handlebars.compile(`<!doctype html>
         </div>
       </div>
     </header>
-    <div id="content" class="container">
+    <main id="content" class="container">
 {{{sectionsHtml}}}
-    </div>
+    </main>
   </body>
 </html>
 `);
@@ -64,7 +64,7 @@ const sectionTemplates = {
   contact: Handlebars.compile(`
   <section id="contact" class="row">
     <aside class="col-sm-3">
-      <h3>{{title}}</h3>
+      <h2>{{title}}</h2>
     </aside>
     <div class="col-sm-9">
       <div class="row">
@@ -95,7 +95,7 @@ const sectionTemplates = {
   about: Handlebars.compile(`
   <section id="about" class="row">
     <aside class="col-sm-3">
-      <h3>{{title}}</h3>
+      <h2>{{title}}</h2>
     </aside>
     <div class="col-sm-9">
       <p>{{summary}}</p>
@@ -105,7 +105,7 @@ const sectionTemplates = {
   profiles: Handlebars.compile(`
   <section id="profiles" class="row">
     <aside class="col-sm-3">
-      <h3>{{title}}</h3>
+      <h2>{{title}}</h2>
     </aside>
     <div class="col-sm-9">
       <div class="row">
@@ -138,10 +138,10 @@ const sectionTemplates = {
   </section>
 `),
   work: Handlebars.compile(sectionListTemplate('work', 'Work', `
-      <h4 class="strike-through">
+      <h3 class="strike-through">
         <span>{{company}}</span>
         <span class="date">{{displayDateRange}}</span>
-      </h4>
+      </h3>
       {{#if website}}
       <div class="website pull-right">
         <a href="{{website}}">{{displayUrl website}}</a>
@@ -156,7 +156,7 @@ const sectionTemplates = {
       </div>
       {{/if}}
       {{#if highlights.length}}
-      <h4>Highlights</h4>
+      <h3>Highlights</h3>
       <ul>
         {{#each highlights}}
         <li>{{this}}</li>
@@ -175,10 +175,10 @@ const sectionTemplates = {
       {{/if}}
   `)),
   volunteer: Handlebars.compile(sectionListTemplate('volunteer', 'Volunteer', `
-      <h4 class="strike-through">
+      <h3 class="strike-through">
         <span>{{organization}}</span>
         <span class="date">{{displayDateRange}}</span>
-      </h4>
+      </h3>
       {{#if website}}
       <div class="website pull-right">
         <a href="{{website}}">{{displayUrl website}}</a>
@@ -193,7 +193,7 @@ const sectionTemplates = {
       </div>
       {{/if}}
       {{#if highlights.length}}
-      <h4>Highlights</h4>
+      <h3>Highlights</h3>
       <ul>
         {{#each highlights}}
         <li>{{this}}</li>
@@ -202,10 +202,10 @@ const sectionTemplates = {
       {{/if}}
   `)),
   education: Handlebars.compile(sectionListTemplate('education', 'Education', `
-      <h4 class="strike-through">
+      <h3 class="strike-through">
         <span>{{institution}}</span>
         <span class="date">{{displayDateRange}}</span>
-      </h4>
+      </h3>
       {{#if area}}
       <div class="area">{{area}}</div>
       {{/if}}
@@ -213,7 +213,7 @@ const sectionTemplates = {
       <div class="studyType">{{studyType}}</div>
       {{/if}}
       {{#if courses.length}}
-      <h4>Courses</h4>
+      <h3>Courses</h3>
       <ul>
         {{#each courses}}
         <li>{{this}}</li>
@@ -222,9 +222,9 @@ const sectionTemplates = {
       {{/if}}
   `)),
   awards: Handlebars.compile(sectionListTemplate('awards', 'Awards', `
-      <h4 class="strike-through">
+      <h3 class="strike-through">
         <span>{{title}}</span>
-      </h4>
+      </h3>
       {{#if date}}
       <div class="date pull-right">
         <em>Awarded</em>
@@ -242,10 +242,10 @@ const sectionTemplates = {
       {{/if}}
   `)),
   publications: Handlebars.compile(sectionListTemplate('publications', 'Publications', `
-      <h4 class="strike-through">
+      <h3 class="strike-through">
         <span>{{name}}</span>
         <span class="date">{{releaseDate}}</span>
-      </h4>
+      </h3>
       {{#if website}}
       <div class="website pull-right">
         <a href="{{website}}"></a>
@@ -266,7 +266,7 @@ const sectionTemplates = {
   skills: Handlebars.compile(`
   <section id="skills" class="row">
     <aside class="col-sm-3">
-      <h3>{{title}}</h3>
+      <h2>{{title}}</h2>
     </aside>
     <div class="col-sm-9">
       <div class="row">
@@ -274,7 +274,7 @@ const sectionTemplates = {
         <div class="col-sm-6">
           {{#if name}}
           <div>
-            <h4>{{name}}</h4>
+            <h3>{{name}}</h3>
           </div>
           {{/if}}
           {{#if keywords.length}}
@@ -293,7 +293,7 @@ const sectionTemplates = {
   languages: Handlebars.compile(`
   <section id="languages" class="row">
     <aside class="col-sm-3">
-      <h3>{{title}}</h3>
+      <h2>{{title}}</h2>
     </aside>
     <div class="col-sm-9">
       <div class="row">
@@ -316,7 +316,7 @@ const sectionTemplates = {
   interests: Handlebars.compile(`
   <section id="interests" class="row">
     <aside class="col-sm-3">
-      <h3>{{title}}</h3>
+      <h2>{{title}}</h2>
     </aside>
     <div class="col-sm-9">
       <div class="row">
@@ -324,7 +324,7 @@ const sectionTemplates = {
         <div class="col-sm-6">
           {{#if name}}
           <div>
-            <h4>{{name}}</h4>
+            <h3>{{name}}</h3>
           </div>
           {{/if}}
           {{#if keywords.length}}
@@ -343,7 +343,7 @@ const sectionTemplates = {
   references: Handlebars.compile(`
   <section id="references" class="row">
     <aside class="col-sm-3">
-      <h3>{{title}}</h3>
+      <h2>{{title}}</h2>
     </aside>
     <div class="col-sm-9">
       <div class="row">
@@ -633,7 +633,7 @@ function sectionListTemplate(id, title, body) {
   return `
   <section id="${id}" class="row">
     <aside class="col-sm-3">
-      <h3>{{title}}</h3>
+      <h2>{{title}}</h2>
     </aside>
     <div class="col-sm-9">
       <div class="row">
