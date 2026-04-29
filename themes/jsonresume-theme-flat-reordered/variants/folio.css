@@ -14,7 +14,7 @@ body {
   background: linear-gradient(180deg, #e7f1ee 0, var(--paper) 260px);
   color: var(--ink);
   font-family: Manrope, Arial, sans-serif;
-  margin: 0 0 78px;
+  margin: 0;
 }
 
 a {
@@ -129,7 +129,7 @@ h4 span:first-child {
   letter-spacing: 0;
 }
 
-#header h2 {
+#header .header-role {
   color: var(--accent);
   font-size: 18px;
   font-weight: 800;

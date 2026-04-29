@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "node scripts/build-html.js",
-    "dev": "node --watch --watch-path=scripts/dev.js --watch-path=resume.json --watch-path=.env scripts/dev.js",
+    "dev": "node --watch --watch-path=scripts/dev.js --watch-path=scripts/build-html.js --watch-path=scripts/build-design-variants.js --watch-path=scripts/theme-variants.js --watch-path=resume.json --watch-path=.env --watch-path=themes/jsonresume-theme-flat-reordered/index.js --watch-path=themes/jsonresume-theme-flat-reordered/variants scripts/dev.js",
     "render": "npm run build",
     "variants": "node scripts/build-design-variants.js",
     "validate": "resumed validate resume.json"

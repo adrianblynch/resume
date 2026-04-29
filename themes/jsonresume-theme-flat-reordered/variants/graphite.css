@@ -1,5 +1,250 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:400,600,800|IBM+Plex+Mono:500);
-@import url(css/v2-base.css);
+:root {
+  --paper: #ffffff;
+  --header: #f5f6f8;
+  --ink: #1d2229;
+  --muted: #68717d;
+  --rule: #dfe4ea;
+  --accent: #2454d6;
+  --accent-2: #258c75;
+  --section-bg: transparent;
+  --section-border: var(--rule);
+  --section-radius: 0;
+  --heading-font: Inter, Arial, sans-serif;
+  --body-font: Inter, Arial, sans-serif;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body-font);
+  font-size: var(--body-size, 14px);
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+
+p {
+  line-height: var(--line-height, 1.58);
+  margin: 0;
+}
+
+p + p {
+  margin-top: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+section {
+  background: var(--section-bg);
+  border-top: var(--section-rule-width, 1px) solid var(--section-border);
+  border-radius: var(--section-radius);
+  margin-top: var(--section-gap, 28px);
+  padding-top: var(--section-padding, 22px);
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  line-height: var(--list-line-height, 1.65);
+  list-style: none;
+  padding-left: 20px;
+  position: relative;
+}
+
+li:before {
+  background: var(--accent);
+  border-radius: var(--bullet-radius, 50%);
+  content: "";
+  height: var(--bullet-size, 6px);
+  left: 0;
+  position: absolute;
+  top: var(--bullet-top, 10px);
+  width: var(--bullet-size, 6px);
+}
+
+blockquote {
+  border-left: 5px solid var(--accent);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: normal;
+}
+
+h4 span:first-child {
+  color: var(--ink);
+  font-family: var(--heading-font);
+  font-weight: 800;
+}
+
+.container {
+  max-width: var(--container-width, 800px);
+  padding: 0 30px;
+}
+
+.col-sm-6 {
+  margin-bottom: 10px;
+}
+
+.col-sm-12 h4 {
+  margin-top: 12px;
+}
+
+.col-sm-12 + .col-sm-12 {
+  margin-top: 28px;
+}
+
+#header {
+  background: var(--header);
+  border-bottom: var(--header-border, 0) solid var(--accent);
+  color: var(--header-ink, var(--ink));
+  margin-bottom: 30px;
+  padding: var(--header-padding, 50px 0 42px);
+}
+
+#header h1 {
+  color: var(--header-title, inherit);
+  font-family: var(--heading-font);
+  font-size: var(--title-size, 44px);
+  font-weight: var(--title-weight, 800);
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+#header .header-role {
+  color: var(--header-subtitle, var(--muted));
+  display: block;
+  font-size: inherit;
+  font-weight: var(--subtitle-weight, 700);
+  line-height: inherit;
+}
+
+#content h3 {
+  color: var(--accent);
+  font-family: var(--heading-font);
+  font-size: var(--section-title-size, 19px);
+  font-weight: 800;
+  letter-spacing: 0;
+  margin-top: -3px;
+}
+
+#content aside {
+  padding-right: 30px;
+  text-align: right;
+}
+
+#profiles .network {
+  text-transform: capitalize;
+}
+
+#work .position,
+#volunteer .position,
+#education .area {
+  color: var(--accent-2);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+#education .area:before {
+  content: "";
+}
+
+#education .studyType {
+  color: var(--muted);
+  margin-left: 0;
+}
+
+#awards .summary,
+#publications .summary {
+  margin-top: 8px;
+}
+
+#publications .website a:before {
+  content: attr(href);
+}
+
+@media (min-width: 480px) {
+  .strike-through {
+    border-top: 1px solid var(--rule);
+    height: 21px;
+    margin-bottom: 0;
+    margin-top: 12px;
+    position: relative;
+  }
+
+  .strike-through span,
+  .strike-through a {
+    background: var(--paper);
+    position: absolute;
+  }
+
+  .strike-through span:first-child {
+    margin-top: -12px;
+    padding-right: 18px;
+  }
+
+  .strike-through span + span {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: -10px;
+    padding-left: 18px;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #content aside {
+    margin-bottom: 12px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  #publications .website a:before {
+    content: "View publication";
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .date {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .strike-through span {
+    display: block;
+  }
+
+  #header {
+    padding: 40px 0 34px;
+  }
+}
+
 
 :root {
   --paper: #17191c;

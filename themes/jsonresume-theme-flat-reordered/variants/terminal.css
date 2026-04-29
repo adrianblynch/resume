@@ -14,7 +14,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: Inter, Arial, sans-serif;
-  margin: 0 0 76px;
+  margin: 0;
 }
 
 a {
@@ -126,7 +126,7 @@ h4 span:first-child {
   color: var(--accent-2);
 }
 
-#header h2 {
+#header .header-role {
   color: var(--muted);
   font-family: "JetBrains Mono", monospace;
   font-size: 17px;

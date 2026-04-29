@@ -1,51 +1,24 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const {
+  applyVariantToHtml,
+  cssForVariant,
+  filenameFor,
+  labelFor,
+  variants
+} = require('./theme-variants');
 
 const cwd = process.cwd();
 const sourceHtmlPath = path.join(cwd, 'resume.html');
 const variantsDir = path.join(cwd, 'variants');
-const variantStylesDir = path.join(cwd, 'themes', 'jsonresume-theme-flat-reordered', 'variants');
-const sharedVariantCssPath = path.join(variantStylesDir, 'work-skills.css');
-
-const variants = [
-  'editorial',
-  'atlas',
-  'blueprint',
-  'chrome',
-  'compact',
-  'coral',
-  'executive',
-  'folio',
-  'graphite',
-  'high-contrast',
-  'ledger',
-  'magazine',
-  'mint',
-  'monochrome',
-  'newsroom',
-  'prism',
-  'signal',
-  'studio',
-  'swiss',
-  'warm-minimal',
-  'terminal'
-];
-
-const styleBlockPattern = /(<style type="text\/css">\n)([\s\S]*?)(\n    <\/style>)/;
 const sourceHtml = fs.readFileSync(sourceHtmlPath, 'utf8');
 
-if (!styleBlockPattern.test(sourceHtml)) {
-  throw new Error('Could not find the embedded CSS block in resume.html.');
-}
-
 fs.mkdirSync(variantsDir, { recursive: true });
-const sharedVariantCss = fs.readFileSync(sharedVariantCssPath, 'utf8').trimEnd();
 
 for (const slug of variants) {
   const filename = filenameFor(slug);
-  const cssPath = path.join(variantStylesDir, `${slug}.css`);
-  const css = `${fs.readFileSync(cssPath, 'utf8').trimEnd()}\n\n${sharedVariantCss}`;
-  const html = sourceHtml.replace(styleBlockPattern, `$1${css}$3`);
+  const css = cssForVariant(cwd, slug);
+  const html = applyVariantToHtml(sourceHtml, css);
   fs.writeFileSync(path.join(variantsDir, filename), html);
 }
 
@@ -54,8 +27,10 @@ writeIndex();
 console.log(`Wrote ${variants.length} design variants and index.html to ${variantsDir}`);
 
 function writeIndex() {
-  const originalPath = '../resume.html';
+  const originalPath = filenameFor('original');
+  const mainPath = '../resume.html';
   const variantLinks = variants
+    .filter((slug) => slug !== 'original')
     .map((slug) => {
       const filename = filenameFor(slug);
       const label = labelFor(slug);
@@ -253,20 +228,21 @@ function writeIndex() {
     <header>
       <div>
         <h1>Resume Design Variants</h1>
-        <p>Compare the original resume with the CSS-only variants.</p>
+        <p>Compare the configured main resume with the CSS-only variants.</p>
       </div>
-      <a class="open-link" href="${originalPath}" target="_blank" id="open-current">Open current view</a>
+      <a class="open-link" href="${mainPath}" target="_blank" id="open-current">Open current view</a>
     </header>
     <div class="layout">
       <nav aria-label="Resume variants">
         <div class="group-label">Baseline</div>
-        <a href="${originalPath}" target="preview" class="active" data-file="${originalPath}" data-slug="original">Original</a>
+        <a href="${mainPath}" target="preview" class="active" data-file="${mainPath}" data-slug="main">Main</a>
+        <a href="${originalPath}" target="preview" data-file="${originalPath}" data-slug="original">Original</a>
         <div class="group-label">Variants</div>
 ${variantLinks}
       </nav>
       <main>
         <div class="frame-shell">
-          <iframe src="${originalPath}" name="preview" title="Resume preview" id="preview"></iframe>
+          <iframe src="${mainPath}" name="preview" title="Resume preview" id="preview"></iframe>
         </div>
       </main>
     </div>
@@ -328,15 +304,4 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
-}
-
-function filenameFor(slug) {
-  return `${slug}.html`;
-}
-
-function labelFor(slug) {
-  return slug
-    .split('-')
-    .map((word) => `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
-    .join(' ');
 }

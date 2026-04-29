@@ -24,6 +24,7 @@ jobs:
 
     env:
       THEME: jsonresume-theme-flat-reordered
+      THEME_VARIANT: lab
 
     steps:
       - name: Check out repository

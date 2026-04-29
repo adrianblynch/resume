@@ -1,5 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700);
 
+/* Minimal Octicons subset derived from:
+   https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css */
+@font-face {
+  font-family: "Octicons";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
 :root {
   --paper: #f5f7fb;
   --ink: #18202f;
@@ -14,7 +23,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: "IBM Plex Sans", Arial, sans-serif;
-  margin: 0 0 80px;
+  margin: 0;
 }
 
 a {
@@ -118,7 +127,7 @@ h4 span:first-child {
   letter-spacing: 0;
 }
 
-#header h2 {
+#header .header-role {
   color: #9be7d4;
   font-size: 20px;
   font-weight: 500;

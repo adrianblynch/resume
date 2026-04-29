@@ -13,7 +13,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: Inter, Arial, sans-serif;
-  margin: 0 0 82px;
+  margin: 0;
 }
 
 a {
@@ -121,7 +121,7 @@ h4 span:first-child {
   letter-spacing: 0;
 }
 
-#header h2 {
+#header .header-role {
   color: #d8c99f;
   font-size: 18px;
   font-weight: 600;

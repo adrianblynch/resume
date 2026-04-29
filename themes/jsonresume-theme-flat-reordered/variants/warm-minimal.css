@@ -13,7 +13,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: "Atkinson Hyperlegible", Arial, sans-serif;
-  margin: 0 0 78px;
+  margin: 0;
 }
 
 a {
@@ -126,7 +126,7 @@ h4 span:first-child {
   letter-spacing: 0;
 }
 
-#header h2 {
+#header .header-role {
   color: var(--muted);
   font-size: 18px;
   font-weight: 700;

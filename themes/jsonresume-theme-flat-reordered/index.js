@@ -32,7 +32,6 @@ const outerTemplate = Handlebars.compile(`<!doctype html>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
     <title>{{resume.basics.name}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
     <style type="text/css">
 {{{css}}}
     </style>
@@ -116,7 +115,7 @@ const sectionTemplates = {
           <strong class="network">{{network}}</strong>
           {{/if}}
           {{#if username}}
-          <div class="username">
+          <div>
             {{#if url}}
             <div class="url">
               <a href="{{url}}">{{username}}</a>
@@ -158,9 +157,9 @@ const sectionTemplates = {
       {{/if}}
       {{#if highlights.length}}
       <h4>Highlights</h4>
-      <ul class="highlights">
+      <ul>
         {{#each highlights}}
-        <li class="bullet">{{this}}</li>
+        <li>{{this}}</li>
         {{/each}}
       </ul>
       {{/if}}
@@ -195,9 +194,9 @@ const sectionTemplates = {
       {{/if}}
       {{#if highlights.length}}
       <h4>Highlights</h4>
-      <ul class="highlights">
+      <ul>
         {{#each highlights}}
-        <li class="bullet">{{this}}</li>
+        <li>{{this}}</li>
         {{/each}}
       </ul>
       {{/if}}
@@ -215,7 +214,7 @@ const sectionTemplates = {
       {{/if}}
       {{#if courses.length}}
       <h4>Courses</h4>
-      <ul class="courses">
+      <ul>
         {{#each courses}}
         <li>{{this}}</li>
         {{/each}}
@@ -233,7 +232,7 @@ const sectionTemplates = {
       </div>
       {{/if}}
       {{#if awarder}}
-      <div class="awarder">
+      <div>
         <em>by</em>
         <strong>{{awarder}}</strong>
       </div>
@@ -253,7 +252,7 @@ const sectionTemplates = {
       </div>
       {{/if}}
       {{#if publisher}}
-      <div class="publisher">
+      <div>
         <em>Published by</em>
         <strong>{{publisher}}</strong>
       </div>
@@ -274,12 +273,12 @@ const sectionTemplates = {
         {{#each skills}}
         <div class="col-sm-6">
           {{#if name}}
-          <div class="name">
+          <div>
             <h4>{{name}}</h4>
           </div>
           {{/if}}
           {{#if keywords.length}}
-          <ul class="keywords">
+          <ul>
             {{#each keywords}}
             <li>{{this}}</li>
             {{/each}}
@@ -301,12 +300,12 @@ const sectionTemplates = {
         {{#each languages}}
         <div class="col-sm-6">
           {{#if language}}
-          <div class="language">
+          <div>
             <strong>{{language}}</strong>
           </div>
           {{/if}}
           {{#if fluency}}
-          <div class="fluency">{{fluency}}</div>
+          <div>{{fluency}}</div>
           {{/if}}
         </div>
         {{/each}}
@@ -324,12 +323,12 @@ const sectionTemplates = {
         {{#each interests}}
         <div class="col-sm-6">
           {{#if name}}
-          <div class="name">
+          <div>
             <h4>{{name}}</h4>
           </div>
           {{/if}}
           {{#if keywords.length}}
-          <ul class="keywords">
+          <ul>
             {{#each keywords}}
             <li>{{this}}</li>
             {{/each}}
@@ -351,10 +350,10 @@ const sectionTemplates = {
         {{#each references}}
         <div class="col-sm-12">
           {{#if reference}}
-          <blockquote class="reference">
+          <blockquote>
             <p>{{reference}}</p>
             {{#if name}}
-            <p class="name">
+            <p>
               <strong>- {{name}}</strong>
             </p>
             {{/if}}
@@ -373,7 +372,7 @@ module.exports = {
 };
 
 function render(resume) {
-  const css = fs.readFileSync(path.join(__dirname, 'style.css'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, 'variants', 'original.css'), 'utf8');
   const sectionsHtml = buildSections(resume).join('\n');
 
   return outerTemplate({

@@ -1,45 +1,63 @@
-@import url(
-  https://fonts.googleapis.com/css?family=Lato:400,700
+/* Minimal Octicons subset derived from:
+   https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css */
+@font-face {
+  font-family: "Octicons";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700
 );
+
 body {
   background: #fff;
   font-family: Lato, sans-serif;
-  margin: 0 0 80px;
+  margin: 0;
 }
+
 a {
   color: #2ecc71;
 }
+
 a:focus,
 a:hover {
   color: #f1c40f;
   text-decoration: none;
 }
+
 p {
   line-height: 1.5;
   margin: 0;
 }
-p + p {
+
+p+p {
   margin-top: 10px;
 }
+
 h1,
 h2,
 h3,
 h4 {
   margin-top: 0;
 }
+
 section {
   margin-top: 30px;
 }
+
 ul {
   margin: 0;
   padding-left: 0;
 }
+
 li {
   line-height: 1.8;
   list-style: none;
   padding-left: 18px;
   position: relative;
 }
+
 li:before {
   content: "\f052";
   font: 13px Octicons;
@@ -48,41 +66,46 @@ li:before {
   position: absolute;
   top: 6px;
 }
+
 blockquote {
   border-left: 5px solid #e7e9ec;
   font-size: 14px;
 }
+
 em {
   color: #95a5a6;
   font-style: normal;
   font-weight: normal;
 }
+
 h4 span:first-child {
   color: #000;
   font-weight: bold;
 }
+
 .container {
   max-width: 750px;
   padding: 0 30px;
 }
+
 .col-sm-6 {
   margin-bottom: 10px;
 }
+
 .col-sm-12 h4 {
   margin-top: 12px;
 }
-.col-sm-12 + .col-sm-12 {
+
+.col-sm-12+.col-sm-12 {
   margin-top: 30px;
 }
+
 #header {
   background: #f4f6f6;
   margin-bottom: 30px;
   padding: 50px 0;
 }
-#header h2 {
-  color: #95a5a6;
-  font-size: 24px;
-}
+
 #header .header-role {
   color: #95a5a6;
   display: block;
@@ -90,35 +113,43 @@ h4 span:first-child {
   font-weight: 700;
   line-height: inherit;
 }
+
 #content h3 {
   color: #f1c40f;
   font-size: 26px;
   margin-top: -4px;
 }
+
 #content aside {
   padding-right: 30px;
   text-align: right;
 }
+
 #profiles .network {
   text-transform: capitalize;
 }
+
 #work .position,
 #volunteer .position {
   font-weight: bold;
   margin-bottom: 8px;
 }
+
 .work-skills {
   margin-top: 12px;
 }
+
 .work-skills strong {
   display: block;
   margin-bottom: 6px;
 }
+
 .work-skills ul {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
+
 .work-skills li {
   background: #f4f6f6;
   border-radius: 3px;
@@ -126,24 +157,30 @@ h4 span:first-child {
   line-height: 1.4;
   padding: 3px 8px;
 }
+
 .work-skills li:before {
   content: none;
 }
+
 #education .area {
   font-weight: bold;
 }
+
 #education .area:before {
   content: "\f0d7";
   font: 16px Octicons;
   margin-right: 6px;
 }
+
 #education .studyType {
   margin-left: 25px;
 }
+
 #awards .summary,
 #publications .summary {
   margin-top: 8px;
 }
+
 #publications .website a:before {
   content: attr(href);
 }
@@ -156,53 +193,65 @@ h4 span:first-child {
     margin-top: 12px;
     position: relative;
   }
+
   .strike-through span,
   .strike-through a {
     background: #fff;
     position: absolute;
   }
+
   .strike-through span:first-child {
     margin-top: -12px;
     padding-right: 20px;
   }
-  .strike-through span + span {
+
+  .strike-through span+span {
     font-size: 14px;
     margin-top: -10px;
     padding-left: 20px;
     right: 0;
   }
 }
+
 @media (max-width: 768px) {
   .col-sm-6:last-child {
     margin-bottom: 0;
   }
+
   #content aside {
     margin-bottom: 20px;
     padding-right: 0;
     text-align: left;
   }
+
   #publications .website a:before {
     content: "View publication";
   }
 }
+
 @media (max-width: 480px) {
   h1 {
     font-size: 26px;
   }
+
   .date {
     font-size: 14px;
     margin-bottom: 5px;
   }
+
   .strike-through span:first-child {
     margin-bottom: 7px;
   }
+
   .strike-through span {
     display: block;
   }
+
   #header {
     margin-bottom: 10px;
     padding: 40px 0;
   }
+
   #actions {
     display: none;
   }
