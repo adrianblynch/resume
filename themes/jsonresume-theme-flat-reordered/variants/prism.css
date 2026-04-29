@@ -10,8 +10,9 @@
   --section-bg: transparent;
   --section-border: var(--rule);
   --section-radius: 0;
-  --heading-font: Inter, Arial, sans-serif;
-  --body-font: Inter, Arial, sans-serif;
+  --font-sans: Inter, Arial, sans-serif;
+  --heading-font: var(--font-sans);
+  --body-font: var(--font-sans);
 }
 
 body {

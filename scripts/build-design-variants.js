@@ -1,17 +1,24 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const dotenv = require('dotenv');
 const {
   applyVariantToHtml,
   cssForVariant,
   filenameFor,
   labelFor,
+  normalizeVariant,
   variants
 } = require('./theme-variants');
 
 const cwd = process.cwd();
+const envPath = path.join(cwd, '.env');
 const sourceHtmlPath = path.join(cwd, 'resume.html');
 const variantsDir = path.join(cwd, 'variants');
+
+dotenv.config({ path: envPath });
+
 const sourceHtml = fs.readFileSync(sourceHtmlPath, 'utf8');
+const themeVariant = normalizeVariant(process.env.THEME_VARIANT);
 
 fs.mkdirSync(variantsDir, { recursive: true });
 
@@ -27,10 +34,10 @@ writeIndex();
 console.log(`Wrote ${variants.length} design variants and index.html to ${variantsDir}`);
 
 function writeIndex() {
-  const originalPath = filenameFor('original');
   const mainPath = '../resume.html';
+  const mainLabel = labelFor(themeVariant);
   const variantLinks = variants
-    .filter((slug) => slug !== 'original')
+    .filter((slug) => slug !== themeVariant)
     .map((slug) => {
       const filename = filenameFor(slug);
       const label = labelFor(slug);
@@ -235,8 +242,7 @@ function writeIndex() {
     <div class="layout">
       <nav aria-label="Resume variants">
         <div class="group-label">Baseline</div>
-        <a href="${mainPath}" target="preview" class="active" data-file="${mainPath}" data-slug="main">Main</a>
-        <a href="${originalPath}" target="preview" data-file="${originalPath}" data-slug="original">Original</a>
+        <a href="${mainPath}" target="preview" class="active" data-file="${mainPath}" data-slug="${escapeHtml(themeVariant)}">${escapeHtml(mainLabel)}</a>
         <div class="group-label">Variants</div>
 ${variantLinks}
       </nav>

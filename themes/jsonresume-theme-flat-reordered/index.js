@@ -156,7 +156,7 @@ const sectionTemplates = {
       </div>
       {{/if}}
       {{#if highlights.length}}
-      <h3>Highlights</h3>
+      <h4>Highlights</h4>
       <ul>
         {{#each highlights}}
         <li>{{this}}</li>
@@ -165,7 +165,7 @@ const sectionTemplates = {
       {{/if}}
       {{#if skills.length}}
       <div class="work-skills">
-        <strong>Skills</strong>
+        <h4>Skills</h4>
         <ul>
           {{#each skills}}
           <li>{{this}}</li>
@@ -213,7 +213,7 @@ const sectionTemplates = {
       <div class="studyType">{{studyType}}</div>
       {{/if}}
       {{#if courses.length}}
-      <h3>Courses</h3>
+      <h4>Courses</h4>
       <ul>
         {{#each courses}}
         <li>{{this}}</li>
