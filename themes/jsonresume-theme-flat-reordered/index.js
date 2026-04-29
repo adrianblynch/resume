@@ -29,8 +29,9 @@ const outerTemplate = Handlebars.compile(`<!doctype html>
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
+    <meta name="description" content="{{resume.basics.metaDescription}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{resume.basics.name}}</title>
+    <title>{{resume.basics.name}} - {{resume.basics.label}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
     <style type="text/css">
 {{{css}}}
