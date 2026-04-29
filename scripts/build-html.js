@@ -2,7 +2,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 const dotenv = require('dotenv');
-const { applyVariantToHtml, cssForVariant, normalizeVariant } = require('./theme-variants');
+const { applyBaseCssToHtml, applyVariantToHtml, normalizeVariant } = require('./theme-variants');
+const { buildOptimizedCss } = require('./build-css');
 
 const cwd = process.cwd();
 const envPath = path.join(cwd, '.env');
@@ -15,9 +16,16 @@ dotenv.config({ path: envPath });
 const theme = process.env.THEME || 'jsonresume-theme-flat-reordered';
 const themeVariant = normalizeVariant(process.env.THEME_VARIANT);
 
-runResumed(['validate', resumePath], 'Validation failed.');
-runResumed(['render', resumePath, '--theme', theme, '--output', htmlPath], 'Build failed.');
-applyConfiguredVariant();
+main().catch((error) => {
+  console.error(error.message);
+  process.exit(1);
+});
+
+async function main() {
+  runResumed(['validate', resumePath], 'Validation failed.');
+  runResumed(['render', resumePath, '--theme', theme, '--output', htmlPath], 'Build failed.');
+  await applyConfiguredVariant();
+}
 
 function runResumed(args, message) {
   try {
@@ -31,11 +39,12 @@ function runResumed(args, message) {
   }
 }
 
-function applyConfiguredVariant() {
+async function applyConfiguredVariant() {
   const html = fs.readFileSync(htmlPath, 'utf8');
-  const css = cssForVariant(cwd, themeVariant);
-  const variantHtml = applyVariantToHtml(html, css);
+  const { baseCss, themeCss } = await buildOptimizedCss(cwd, themeVariant);
+  const withBaseCss = applyBaseCssToHtml(html, baseCss);
+  const variantHtml = applyVariantToHtml(withBaseCss, themeCss);
 
   fs.writeFileSync(htmlPath, variantHtml);
-  console.log(`Applied theme variant: ${themeVariant}`);
+  console.log(`Applied optimized Bootstrap and theme variant: ${themeVariant}`);
 }

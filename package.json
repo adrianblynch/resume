@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "node scripts/build-html.js",
-    "dev": "node --watch --watch-path=scripts/dev.js --watch-path=scripts/build-html.js --watch-path=scripts/build-design-variants.js --watch-path=scripts/theme-variants.js --watch-path=resume.json --watch-path=.env --watch-path=themes/jsonresume-theme-flat-reordered/index.js --watch-path=themes/jsonresume-theme-flat-reordered/variants scripts/dev.js",
+    "dev": "node --watch --watch-path=scripts/dev.js --watch-path=scripts/build-html.js --watch-path=scripts/build-css.js --watch-path=scripts/build-design-variants.js --watch-path=scripts/theme-variants.js --watch-path=resume.json --watch-path=.env --watch-path=themes/jsonresume-theme-flat-reordered/index.js --watch-path=themes/jsonresume-theme-flat-reordered/variants scripts/dev.js",
     "render": "npm run build",
     "variants": "node scripts/build-design-variants.js",
     "validate": "resumed validate resume.json"
@@ -17,8 +17,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^8.0.0",
+    "bootstrap": "^3.4.1",
     "dotenv": "^17.4.2",
     "jsonresume-theme-flat-reordered": "file:./themes/jsonresume-theme-flat-reordered",
+    "lightningcss": "^1.32.0",
     "resumed": "^3.0.1"
   }
 }

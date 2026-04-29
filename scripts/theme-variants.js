@@ -1,7 +1,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const styleBlockPattern = /(<style type="text\/css">\n)([\s\S]*?)(\n    <\/style>)/;
+const baseStyleBlockPattern = /(<style type="text\/css" data-base-css>\n)([\s\S]*?)(\n    <\/style>)/;
+const themeStyleBlockPattern = /(<style type="text\/css" data-theme-css>\n)([\s\S]*?)(\n    <\/style>)/;
 
 const variants = [
   'original',
@@ -67,14 +68,23 @@ function cssForVariant(cwd, slug) {
 }
 
 function applyVariantToHtml(html, css) {
-  if (!styleBlockPattern.test(html)) {
-    throw new Error('Could not find the embedded CSS block in resume.html.');
+  if (!themeStyleBlockPattern.test(html)) {
+    throw new Error('Could not find the embedded theme CSS block in resume.html.');
   }
 
-  return html.replace(styleBlockPattern, `$1${css}$3`);
+  return html.replace(themeStyleBlockPattern, `$1${css}$3`);
+}
+
+function applyBaseCssToHtml(html, css) {
+  if (!baseStyleBlockPattern.test(html)) {
+    throw new Error('Could not find the embedded base CSS block in resume.html.');
+  }
+
+  return html.replace(baseStyleBlockPattern, `$1${css}$3`);
 }
 
 module.exports = {
+  applyBaseCssToHtml,
   applyVariantToHtml,
   cssForVariant,
   filenameFor,

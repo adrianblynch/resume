@@ -32,9 +32,11 @@ const outerTemplate = Handlebars.compile(`<!doctype html>
     <meta name="description" content="{{resume.basics.metaDescription}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{resume.basics.name}} - {{resume.basics.label}}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-    <style type="text/css">
-{{{css}}}
+    <style type="text/css" data-base-css>
+{{{baseCss}}}
+    </style>
+    <style type="text/css" data-theme-css>
+{{{themeCss}}}
     </style>
   </head>
   <body>
@@ -373,11 +375,12 @@ module.exports = {
 };
 
 function render(resume) {
-  const css = fs.readFileSync(path.join(__dirname, 'variants', 'original.css'), 'utf8');
+  const themeCss = fs.readFileSync(path.join(__dirname, 'variants', 'original.css'), 'utf8');
   const sectionsHtml = buildSections(resume).join('\n');
 
   return outerTemplate({
-    css,
+    baseCss: '',
+    themeCss,
     resume,
     sectionsHtml
   });
