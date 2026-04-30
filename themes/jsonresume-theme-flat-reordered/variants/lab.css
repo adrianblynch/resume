@@ -5,7 +5,8 @@
   --ink: #1b2335;
   --muted: #5d6b80;
   --rule: #dfe7ee;
-  --accent: #6e56f0;
+  --accent: #3b82f6;
+  --accent-hover: #4f8fb0;
   --accent-2: #149c97;
   --section-bg: #ffffff;
   --section-border: #d9e4ec;
@@ -46,7 +47,7 @@ a {
 
 a:focus,
 a:hover {
-  color: #4f8fb0;
+  color: var(--accent-hover);
   text-decoration: none;
 }
 
@@ -99,7 +100,7 @@ li {
 }
 
 li:before {
-  background: #3b82f6;
+  background: var(--accent);
   border-radius: 50%;
   box-shadow: none;
   content: "";
@@ -112,7 +113,7 @@ li:before {
 
 blockquote {
   background: rgba(255, 255, 255, 0.86);
-  border-left: 5px solid #3b82f6;
+  border-left: 5px solid var(--accent);
   color: var(--ink);
   font-size: 14px;
   padding: 14px 18px;
