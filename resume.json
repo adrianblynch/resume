@@ -42,7 +42,7 @@
         "picture": "",
         "email": "adelynch+cv@gmail.com",
         "phone": "07855 818 413",
-        "summary": "An experienced, enthusiastic, full-stack web applications developer with a broad skill set. Specialising in JavaScript, both in Node and the browser, CFML and SQL. I'm passionate about learning and improving my craft. I enjoy mentoring and teaching others. I'm pragmatic in my approach to development with a drive to solve problems with technical solutions.",
+        "summary": "I'm a hands-on software engineer and technology leader with more than 20 years of experience building web applications, APIs and technology platforms. I've worked across the full stack and across a wide range of technologies, from ColdFusion and SQL Server to JavaScript, Node.js, React, PHP/Laravel and AWS.\n\nMy career has taken me from developer to technical lead and CTO, giving me experience in software development, architecture, infrastructure, security, delivery and engineering leadership. I've worked across payments, financial technology, travel, digital media and other complex domains.\n\nI'm pragmatic, curious and still enjoy getting stuck into difficult technical problems. I like building useful software, improving systems and processes, and mentoring other engineers.",
         "metaDescription": "Experienced CTO and full-stack developer specialising in JavaScript, Node.js, and cloud infrastructure, with a proven track record leading teams, building scalable platforms, and delivering pragmatic technical solutions.",
         "location": {
             "address": "",
@@ -77,14 +77,53 @@
             "website": "https://uqualify.co",
             "startDate": "2019-06-05",
             "summary": "Joined uQualify as interim CTO after the previous CTO and developer left, re-establishing control of the platform, infrastructure and delivery pipeline while bridging the gap between the directors and external technical partners. Led the evolution of the business from a Laravel-based card payments gateway into the white-labelled uQualify platform, expanding PSP coverage, ecommerce plugins, multi-portal onboarding/KYC/admin tooling, and later banking, ledger, wallet and crypto/custody capabilities. Regained and audited AWS access, introduced GitHub and deployment automation, improved security and operational controls, and hired and managed a distributed engineering team across multiple time zones.",
+            "summary2": "[generally, don't include things that are explained in the highlights section - add in the move to carbon credits as it includes the ethereum work] Joined uQualify as interim CTO after the previous CTO [don't mention CTO twice] and developer left [do they need to know about the leaving?!], re-establishing control of the platform [better wording needed], infrastructure and delivery pipeline while bridging the gap between the directors and external technical partners. Led the evolution of the business from a Laravel-based card payments gateway into the white-labelled uQualify platform [covering banking, fiat & crypto exchange, custodial wallets], expanding PSP coverage [will they know what a PSP is?], ecommerce plugins, multi-portal [what's multi-portal? maybe explain the parts, agents, partners, customers and admin] onboarding/KYC, and later banking [oxford?], ledger [just 'ledger'? explain], wallet[just 'wallet'? explain] and crypto/custody [break into crypto exchange and custodial wallets?] capabilities. Regained and audited AWS access [break into the regaining control and AWS audit which came later], introduced GitHub and deployment automation[reduce to ci/cd?], improved security and operational controls [more details as a lot was done on this. include policy generation], and hired and managed a distributed engineering team across multiple time zones.",
+            "highlights": [
+                "[talk about the changes to logging, error reporting, deployments, consolidation of servers/dbs and other aws bits]",
+                "Recovered access to the AWS estate, audited and rebuilt EC2 environments, aligned account usage across regions and restored a working deployment pipeline after the previous one was shut down.",
+                "[update to something about the payment flow which includes checkout, refunds and charge-back management] alongside checkout, refund, FX and reporting improvements.",
+                "Expanded the platform to support 20+ payment providers",
+                "Built and maintained multiple ecommerce integrations, including WooCommerce, OpenCart, Magento and HikaShop",
+                "Built out multi-portal flows for Admin, Merchant, Agent and Partner users, including onboarding, KYC, application processing, white-labelling and downloadable compliance/application packs.",
+                "[banking]",
+                "[custodian wallets with internal ledger]",
+                "[bank accounts with internal ledger]",
+                "[something about the integrations or add them to the points above for context]",
+                "Extended the platform into banking, trade, ledger and wallet operations through integrations such as Modulr, Fin, Ebanq and Cobo, including design of an off-chain ledger for custodian wallets.",
+                "Led security and operational improvement work, turning audits into stronger policies, procedures and controls across the business.",
+                "Hired and managed developers and related roles across multiple time zones while maintaining delivery across a fast-evolving product.",
+                "[something about the move into carbon credit projects]",
+                "[something about the ethereum smarts contracts for the carbon credits]",
+                "[something about the crypto payments checkout]"
+            ],
             "skills": [
                 "Laravel",
                 "PHP",
                 "MySQL",
-                "Aurora",
                 "AWS",
+                "Aurora",
                 "EC2",
-                "Crypto",
+                "GitHub",
+                "CI/CD",
+                "Payment gateways",
+                "PSP integrations",
+                "3DS",
+                "Refunds",
+                "FX",
+                "WooCommerce",
+                "OpenCart",
+                "Magento",
+                "HikaShop",
+                "KYC",
+                "White-label platforms",
+                "Banking APIs",
+                "Ledger systems",
+                "Wallet infrastructure",
+                "Custody",
+                "Security audits",
+                "Technical leadership",
+                "Hiring",
+                "Crypto payments",
                 "Smart contracts",
                 "Ethereum"
             ]
@@ -167,6 +206,7 @@
             "endDate": "2016-03-31",
             "summary": "A digital asset management platform for retailers, with workflow, planning, communications and job management to aid collaboration in an enterprise environment.",
             "highlights": [
+                "[coldfusion isn't mentioned in the highlights - talk about the push for the move from cf9 to railo and the improvements to the deployment pipeline]",
                 "Designed and built a Node REST API and Backbone/Marionette front-end to replace a legacy platform.",
                 "Helped transition a Backbone/Marionette MVC front-end application toward a Backbone/Rivets MVVM architecture.",
                 "Designed a Roles API backed by a graph database for authorisation of resources to requesting users.",
@@ -180,10 +220,11 @@
                 "Took part in the hiring of new engineers at junior, senior and technical architect level.",
                 "Ensured the smooth start-up of new hires with guides, documentation and application and code walk-throughs.",
                 "Started Code Club sessions to promote discussion and demos of interest.",
-                "Line managed developers, doing one-to-ones, goal setting and performance reviews."
+                "Line managed developers, with one-to-ones, goal setting and performance reviews."
             ],
             "skills": [
                 "ColdFusion",
+                "Railo",
                 "SQL",
                 "JavaScript",
                 "HTML",
@@ -219,6 +260,28 @@
                 "Orchestrated design work with external suppliers.",
                 "Managed client accounts, contracts and pricing agreements.",
                 "Sourced new clients through networking, social media and existing contacts."
+            ],
+            "skills": [
+                "Full-stack web development",
+                "SEO",
+                "Web design",
+                "Managed hosting",
+                "Windows Server",
+                "Apache",
+                "Tomcat",
+                "Railo",
+                "SQL Server",
+                "Content management systems",
+                "Client liaison",
+                "Requirements gathering",
+                "Application support",
+                "Supplier coordination",
+                "Account management",
+                "Contract management",
+                "Pricing agreements",
+                "Business development",
+                "Networking",
+                "Social media"
             ]
         },
         {
@@ -234,6 +297,16 @@
                 "Integrated the portal with external property sites such as Rightmove and PrimeLocation.",
                 "Built the server infrastructure.",
                 "Created a site templating application for rapid client site generation."
+            ],
+            "skills": [
+                "Product design",
+                "Portal development",
+                "Third-party integrations",
+                "Rightmove",
+                "PrimeLocation",
+                "Server infrastructure",
+                "Site templating",
+                "Rapid client site generation"
             ]
         },
         {
@@ -247,6 +320,25 @@
                 "O2 Events - Designed and built a system for the O2 Events team to organise their UK and European promotional tours.",
                 "Implemented SiteCore CMS for three government agencies, The Training and Development Agency for Schools, The Information Commissioner's Office and the Institute of Educational Assessors.",
                 "Designed and built an advertising awards show media upload service which took video, audio and image files as part of the entry process and allowed modifications and conversions for judging across different devices. (Still in active use today)"
+            ],
+            "skills": [
+                "ASP.Net",
+                "SQL Server",
+                "HTML/CSS",
+                "JavaScript",
+                "Web application development",
+                "Event management systems",
+                "Sitecore",
+                "Web Accessibility",
+                "XML/XSLT",
+                "Media upload services",
+                "Video processing",
+                "Audio processing",
+                "Image processing",
+                "File conversion",
+                "Cross-device workflows",
+                "Flash/ActionScript",
+                "Flex/MXML"
             ]
         },
         {

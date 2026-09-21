@@ -101,7 +101,9 @@ const sectionTemplates = {
       <h2>{{title}}</h2>
     </aside>
     <div class="col-sm-9">
-      <p>{{summary}}</p>
+      {{#each summaryParagraphs}}
+      <p>{{this}}</p>
+      {{/each}}
     </div>
   </section>
 `),
@@ -155,7 +157,9 @@ const sectionTemplates = {
       {{/if}}
       {{#if summary}}
       <div class="summary">
-        <p>{{summary}}</p>
+        {{#each summaryParagraphs}}
+        <p>{{this}}</p>
+        {{/each}}
       </div>
       {{/if}}
       {{#if highlights.length}}
@@ -192,7 +196,9 @@ const sectionTemplates = {
       {{/if}}
       {{#if summary}}
       <div class="summary">
-        <p>{{summary}}</p>
+        {{#each summaryParagraphs}}
+        <p>{{this}}</p>
+        {{/each}}
       </div>
       {{/if}}
       {{#if highlights.length}}
@@ -241,7 +247,11 @@ const sectionTemplates = {
       </div>
       {{/if}}
       {{#if summary}}
-      <div class="summary">{{summary}}</div>
+      <div class="summary">
+        {{#each summaryParagraphs}}
+        <p>{{this}}</p>
+        {{/each}}
+      </div>
       {{/if}}
   `)),
   publications: Handlebars.compile(sectionListTemplate('publications', 'Publications', `
@@ -262,7 +272,9 @@ const sectionTemplates = {
       {{/if}}
       {{#if summary}}
       <div class="summary">
-        <p>{{summary}}</p>
+        {{#each summaryParagraphs}}
+        <p>{{this}}</p>
+        {{/each}}
       </div>
       {{/if}}
   `)),
@@ -376,7 +388,8 @@ module.exports = {
 
 function render(resume) {
   const themeCss = fs.readFileSync(path.join(__dirname, 'variants', 'original.css'), 'utf8');
-  const sectionsHtml = buildSections(resume).join('\n');
+  const sectionsHtml = buildSections(resume).join('
+');
 
   return outerTemplate({
     baseCss: '',
@@ -415,6 +428,7 @@ function buildSections(resume) {
       'about',
       sectionTemplates.about({
         ...basics,
+        summaryParagraphs: splitParagraphs(basics.summary),
         title: titleFor(sectionTitles, 'about', 'About')
       })
     );
@@ -501,6 +515,19 @@ function addArraySection(sections, key, items, sectionTitles, hiddenSections) {
   );
 }
 
+function splitParagraphs(value) {
+  if (typeof value !== 'string') {
+    return [];
+  }
+
+  return value
+    .split(/\\r?\
+\\s*\\r?\
+/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+}
+
 function hasItems(items) {
   return Array.isArray(items) && items.length > 0;
 }
@@ -531,7 +558,10 @@ function formatItemDates(items, fields, dateFormat, dateRangeSeparator) {
   }
 
   return items.map((item) => {
-    const nextItem = { ...item };
+    const nextItem = {
+      ...item,
+      summaryParagraphs: splitParagraphs(item.summary)
+    };
 
     for (const field of fields) {
       if (typeof nextItem[field] === 'string') {
