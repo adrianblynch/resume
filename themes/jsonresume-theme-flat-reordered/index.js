@@ -101,7 +101,7 @@ const sectionTemplates = {
       <h2>{{title}}</h2>
     </aside>
     <div class="col-sm-9">
-      <p>{{summary}}</p>
+      {{#each summaryParagraphs}}\n      <p>{{this}}</p>\n      {{/each}}
     </div>
   </section>
 `),
@@ -154,9 +154,7 @@ const sectionTemplates = {
       <div class="position">{{position}}</div>
       {{/if}}
       {{#if summary}}
-      <div class="summary">
-        <p>{{summary}}</p>
-      </div>
+      <div class="summary">\n        {{#each summaryParagraphs}}\n        <p>{{this}}</p>\n        {{/each}}\n      </div>
       {{/if}}
       {{#if highlights.length}}
       <h4>Highlights</h4>
@@ -191,9 +189,7 @@ const sectionTemplates = {
       <div class="position">{{position}}</div>
       {{/if}}
       {{#if summary}}
-      <div class="summary">
-        <p>{{summary}}</p>
-      </div>
+      <div class="summary">\n        {{#each summaryParagraphs}}\n        <p>{{this}}</p>\n        {{/each}}\n      </div>
       {{/if}}
       {{#if highlights.length}}
       <h3>Highlights</h3>
@@ -241,7 +237,7 @@ const sectionTemplates = {
       </div>
       {{/if}}
       {{#if summary}}
-      <div class="summary">{{summary}}</div>
+      <div class="summary">\n        {{#each summaryParagraphs}}\n        <p>{{this}}</p>\n        {{/each}}\n      </div>
       {{/if}}
   `)),
   publications: Handlebars.compile(sectionListTemplate('publications', 'Publications', `
@@ -261,9 +257,7 @@ const sectionTemplates = {
       </div>
       {{/if}}
       {{#if summary}}
-      <div class="summary">
-        <p>{{summary}}</p>
-      </div>
+      <div class="summary">\n        {{#each summaryParagraphs}}\n        <p>{{this}}</p>\n        {{/each}}\n      </div>
       {{/if}}
   `)),
   skills: Handlebars.compile(`
@@ -415,6 +409,7 @@ function buildSections(resume) {
       'about',
       sectionTemplates.about({
         ...basics,
+        summaryParagraphs: splitParagraphs(basics.summary),
         title: titleFor(sectionTitles, 'about', 'About')
       })
     );
@@ -501,7 +496,7 @@ function addArraySection(sections, key, items, sectionTitles, hiddenSections) {
   );
 }
 
-function hasItems(items) {
+function splitParagraphs(value) {\n  if (typeof value !== 'string') {\n    return [];\n  }\n\n  return value\n    .split(/\\r?\\n\\s*\\r?\\n/)\n    .map((paragraph) => paragraph.trim())\n    .filter(Boolean);\n}\n\nfunction hasItems(items) {
   return Array.isArray(items) && items.length > 0;
 }
 
@@ -531,7 +526,7 @@ function formatItemDates(items, fields, dateFormat, dateRangeSeparator) {
   }
 
   return items.map((item) => {
-    const nextItem = { ...item };
+    const nextItem = {\n      ...item,\n      summaryParagraphs: splitParagraphs(item.summary)\n    };
 
     for (const field of fields) {
       if (typeof nextItem[field] === 'string') {
