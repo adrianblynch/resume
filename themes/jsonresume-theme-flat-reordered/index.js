@@ -101,7 +101,9 @@ const sectionTemplates = {
       <h2>{{title}}</h2>
     </aside>
     <div class="col-sm-9">
-      {{#each summaryParagraphs}}\n      <p>{{this}}</p>\n      {{/each}}
+      {{#each summaryParagraphs}}
+      <p>{{this}}</p>
+      {{/each}}
     </div>
   </section>
 `),
@@ -154,7 +156,11 @@ const sectionTemplates = {
       <div class="position">{{position}}</div>
       {{/if}}
       {{#if summary}}
-      <div class="summary">\n        {{#each summaryParagraphs}}\n        <p>{{this}}</p>\n        {{/each}}\n      </div>
+      <div class="summary">
+        {{#each summaryParagraphs}}
+        <p>{{this}}</p>
+        {{/each}}
+      </div>
       {{/if}}
       {{#if highlights.length}}
       <h4>Highlights</h4>
@@ -189,7 +195,11 @@ const sectionTemplates = {
       <div class="position">{{position}}</div>
       {{/if}}
       {{#if summary}}
-      <div class="summary">\n        {{#each summaryParagraphs}}\n        <p>{{this}}</p>\n        {{/each}}\n      </div>
+      <div class="summary">
+        {{#each summaryParagraphs}}
+        <p>{{this}}</p>
+        {{/each}}
+      </div>
       {{/if}}
       {{#if highlights.length}}
       <h3>Highlights</h3>
@@ -237,7 +247,11 @@ const sectionTemplates = {
       </div>
       {{/if}}
       {{#if summary}}
-      <div class="summary">\n        {{#each summaryParagraphs}}\n        <p>{{this}}</p>\n        {{/each}}\n      </div>
+      <div class="summary">
+        {{#each summaryParagraphs}}
+        <p>{{this}}</p>
+        {{/each}}
+      </div>
       {{/if}}
   `)),
   publications: Handlebars.compile(sectionListTemplate('publications', 'Publications', `
@@ -257,7 +271,11 @@ const sectionTemplates = {
       </div>
       {{/if}}
       {{#if summary}}
-      <div class="summary">\n        {{#each summaryParagraphs}}\n        <p>{{this}}</p>\n        {{/each}}\n      </div>
+      <div class="summary">
+        {{#each summaryParagraphs}}
+        <p>{{this}}</p>
+        {{/each}}
+      </div>
       {{/if}}
   `)),
   skills: Handlebars.compile(`
@@ -370,7 +388,8 @@ module.exports = {
 
 function render(resume) {
   const themeCss = fs.readFileSync(path.join(__dirname, 'variants', 'original.css'), 'utf8');
-  const sectionsHtml = buildSections(resume).join('\n');
+  const sectionsHtml = buildSections(resume).join('
+');
 
   return outerTemplate({
     baseCss: '',
@@ -496,7 +515,20 @@ function addArraySection(sections, key, items, sectionTitles, hiddenSections) {
   );
 }
 
-function splitParagraphs(value) {\n  if (typeof value !== 'string') {\n    return [];\n  }\n\n  return value\n    .split(/\\r?\\n\\s*\\r?\\n/)\n    .map((paragraph) => paragraph.trim())\n    .filter(Boolean);\n}\n\nfunction hasItems(items) {
+function splitParagraphs(value) {
+  if (typeof value !== 'string') {
+    return [];
+  }
+
+  return value
+    .split(/\\r?\
+\\s*\\r?\
+/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+}
+
+function hasItems(items) {
   return Array.isArray(items) && items.length > 0;
 }
 
@@ -526,7 +558,10 @@ function formatItemDates(items, fields, dateFormat, dateRangeSeparator) {
   }
 
   return items.map((item) => {
-    const nextItem = {\n      ...item,\n      summaryParagraphs: splitParagraphs(item.summary)\n    };
+    const nextItem = {
+      ...item,
+      summaryParagraphs: splitParagraphs(item.summary)
+    };
 
     for (const field of fields) {
       if (typeof nextItem[field] === 'string') {
